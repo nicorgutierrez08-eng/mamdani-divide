@@ -1,0 +1,2844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bridging the Mamdani Divide | Avenues Research Project</title>
+<meta name="description" content="A student research project exploring political polarization around NYC Mayor Zohran Mamdani — whether a single well-targeted conversation can shift an entrenched view.">
+<meta name="keywords" content="Mamdani, Zohran Mamdani, NYC Mayor, Bridging the Mamdani Divide, The Mamdani Divide, New York City politics, Mamdani poll, NYC street interviews, political polarization NYC, mamdani research, mamdani project, mamdani study, nyc mayor poll, zohran mamdani opinions, mamdani first 100 days, Mamdanni, Mamdany, Mamadani, Mandani, Mamdaani, Mamdain, Mamdoni, Mamdanee, Zoran Mamdani, Zohren Mamdani, Zahran Mamdani, bridging mamdanni, mamdani devide, mamdani divid, the mamdanni divide, mamadani divide, mandani divide, NYC mayor research, avenues school research, avenues NYC politics">
+<meta property="og:title" content="Bridging the Mamdani Divide | Avenues Research Project">
+<meta property="og:description" content="A student research project exploring political polarization around NYC Mayor Zohran Mamdani.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+/* ====== VARIABLES ====== */
+:root {
+  --navy: #0c2c5c;
+  --navy-deep: #081f42;
+  --navy-darker: #051329;
+  --blue: #1e40af;
+  --blue-bright: #2563eb;
+  --blue-accent: #3b82f6;
+  --blue-light: #93c5fd;
+  --blue-pale: #dbeafe;
+  --black: #0a0a0a;
+  --ink: #0f172a;
+  --white: #ffffff;
+  --off-white: #f8fafc;
+  --cream: #fafafa;
+  --graphite: #1f2937;
+  --grey-900: #111827;
+  --grey-700: #334155;
+  --grey-600: #475569;
+  --grey-500: #64748b;
+  --grey-400: #94a3b8;
+  --grey-300: #cbd5e1;
+  --grey-200: #e2e8f0;
+  --grey-100: #f1f5f9;
+  --success: #10b981;
+  --danger: #ef4444;
+}
+
+/* ====== RESET ====== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--off-white);
+  color: var(--ink);
+  line-height: 1.55;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; display: block; }
+button { font-family: inherit; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+
+/* ====== HEADER ====== */
+header {
+  background: var(--navy);
+  color: #fff;
+  padding: 88px 0 72px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+header::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(59,130,246,0.22) 0%, transparent 60%);
+  pointer-events: none;
+}
+header::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(147,197,253,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+.header-inner { position: relative; }
+.eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  padding: 7px 16px;
+  border: 1px solid rgba(147,197,253,0.28);
+  border-radius: 999px;
+  margin-bottom: 28px;
+  backdrop-filter: blur(4px);
+  background: rgba(12,44,92,0.4);
+}
+h1 {
+  font-size: 3.75rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  margin-bottom: 22px;
+  color: #fff;
+  max-width: 920px;
+}
+h1 .accent {
+  background: linear-gradient(135deg, #93c5fd 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.subtitle {
+  font-size: 1.18rem;
+  color: var(--grey-300);
+  max-width: 720px;
+  line-height: 1.55;
+  font-weight: 400;
+}
+.byline {
+  margin-top: 32px;
+  font-size: 0.88rem;
+  color: var(--grey-500);
+  font-weight: 500;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.byline strong { color: var(--grey-200); font-weight: 600; }
+.byline .dot { color: var(--grey-700); }
+
+/* ====== NAV ====== */
+nav.tabs {
+  background: #fff;
+  border-bottom: 1px solid var(--grey-200);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.96);
+}
+.tabs-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabs-inner::-webkit-scrollbar { display: none; }
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 20px 22px;
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: var(--grey-500);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+  letter-spacing: -0.005em;
+  position: relative;
+}
+.tab-btn:hover { color: var(--ink); }
+.tab-btn.active {
+  color: var(--navy);
+  border-bottom-color: var(--navy);
+}
+
+/* ====== PANELS ====== */
+main { padding: 56px 0 72px; }
+.panel { display: none; animation: fadeIn 0.25s ease; }
+.panel.active { display: block; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== TYPOGRAPHY ====== */
+.section-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue-bright);
+  margin-bottom: 14px;
+}
+h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.028em;
+  line-height: 1.08;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin: 40px 0 16px;
+  color: var(--ink);
+}
+p { margin-bottom: 14px; color: var(--grey-700); }
+.lead {
+  font-size: 1.08rem;
+  color: var(--grey-600);
+  max-width: 760px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* ====== MISSION — hero card ====== */
+.hero-card {
+  background: #fff;
+  border: 1px solid var(--grey-200);
+  border-radius: 14px;
+  padding: 40px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--navy) 0%, var(--blue-accent) 100%);
+}
+.hero-card h3 { margin-top: 0; margin-bottom: 14px; }
+.hero-card p:last-child { margin-bottom: 0; }
+
+/* ====== ESSAY CARD (Why this matters) ====== */
+.essay-card {
+  background: #fff;
+  border: 1px solid var(--grey-200);
+  border-radius: 14px;
+  padding: 40px 44px;
+  margin-top: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.essay-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--blue-accent) 0%, var(--navy) 100%);
+}
+.essay-card h3 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+.essay-card p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--grey-700);
+  margin-bottom: 16px;
+}
+.essay-card p:last-child { margin-bottom: 0; }
+.essay-card em { color: var(--navy); font-style: italic; font-weight: 500; }
+
+/* ====== MISSION — intro note above component grid ====== */
+.intro-note {
+  font-size: 1rem;
+  color: var(--grey-600);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 780px;
+  padding: 16px 0;
+  border-top: 1px solid var(--grey-200);
+  border-bottom: 1px solid var(--grey-200);
+}
+
+/* ====== MISSION — component grid ====== */
+.component-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--grey-200);
+  border: 1px solid var(--grey-200);
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 24px 0 12px;
+}
+.component-card {
+  background: #fff;
+  padding: 28px 26px;
+  position: relative;
+  transition: background 0.2s;
+}
+.component-card:hover { background: var(--cream); }
+.component-card .count {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+.component-card .label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  color: var(--blue-bright);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.component-card p { font-size: 0.92rem; margin: 0; color: var(--grey-600); line-height: 1.5; }
+
+/* ====== MISSION — method steps ====== */
+.method-steps {
+  background: #fff;
+  border: 1px solid var(--grey-200);
+  border-radius: 14px;
+  padding: 36px;
+  margin-bottom: 28px;
+}
+.step {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+  align-items: flex-start;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--grey-100);
+}
+.step:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.step-num {
+  flex-shrink: 0;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: -0.01em;
+}
+.step-body h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.step-body p { margin: 0; font-size: 0.93rem; color: var(--grey-600); }
+
+/* ====== MISSION — talking split ====== */
+.talking-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 24px;
+}
+.talking-card {
+  background: #fff;
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid var(--grey-200);
+  position: relative;
+  overflow: hidden;
+}
+.talking-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.talking-card.skeptic::before { background: linear-gradient(90deg, var(--navy), var(--blue-bright)); }
+.talking-card.supporter::before { background: linear-gradient(90deg, var(--blue-bright), var(--blue-accent)); }
+.talking-card h4 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.talking-card ul { list-style: none; padding: 0; }
+.talking-card li {
+  padding: 9px 0 9px 20px;
+  position: relative;
+  font-size: 0.92rem;
+  color: var(--grey-700);
+  line-height: 1.5;
+  border-bottom: 1px solid var(--grey-100);
+}
+.talking-card li:last-child { border-bottom: none; }
+.talking-card li::before {
+  content: '';
+  position: absolute;
+  left: 4px; top: 17px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--blue-bright);
+}
+
+/* ====== CALLOUT — light ====== */
+.callout {
+  background: var(--blue-pale);
+  border: 1px solid #bfdbfe;
+  border-left: 4px solid var(--blue-bright);
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin: 28px 0;
+}
+.callout h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+.callout p { margin: 0; color: var(--navy-deep); font-size: 0.98rem; line-height: 1.55; }
+.callout em { color: var(--navy); font-style: normal; font-weight: 600; }
+
+/* ====== CALLOUT — dark ====== */
+.callout-dark {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 12px;
+  padding: 30px 34px;
+  margin: 28px 0;
+  border-left: 4px solid var(--blue-accent);
+  position: relative;
+  overflow: hidden;
+}
+.callout-dark::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(59,130,246,0.15), transparent 70%);
+  pointer-events: none;
+}
+.callout-dark .label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  margin-bottom: 10px;
+  position: relative;
+}
+.callout-dark p {
+  margin: 0;
+  color: var(--grey-200);
+  font-size: 1rem;
+  line-height: 1.55;
+  position: relative;
+}
+.callout-dark em {
+  color: #fff;
+  font-style: normal;
+  font-weight: 600;
+  background: linear-gradient(180deg, transparent 60%, rgba(59,130,246,0.25) 60%);
+  padding: 0 2px;
+}
+</style>
+<style>
+/* ====== IMPACT — stat row ====== */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--grey-200);
+  border: 1px solid var(--grey-200);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+.stat-cell {
+  background: #fff;
+  padding: 24px 22px;
+  transition: background 0.2s;
+}
+.stat-cell:hover { background: var(--cream); }
+.stat-cell .big {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+.stat-cell .big.navy { color: var(--navy); }
+.stat-cell .big.blue { color: var(--blue-bright); }
+.stat-cell .big.grey { color: var(--grey-400); }
+.stat-cell .big.accent { color: var(--blue-accent); }
+.stat-cell .label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--grey-500);
+  font-weight: 600;
+}
+
+/* ====== CHART CARDS ====== */
+.chart-card {
+  background: #fff;
+  border: 1px solid var(--grey-200);
+  border-radius: 14px;
+  padding: 32px;
+  margin-bottom: 22px;
+}
+.chart-card h3 {
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 1.2rem;
+  letter-spacing: -0.015em;
+}
+.chart-caption {
+  font-size: 0.9rem;
+  color: var(--grey-500);
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+.chart-wrap {
+  position: relative;
+  width: 100%;
+  height: 540px;
+}
+.chart-wrap.mid { height: 320px; }
+.chart-wrap.small { height: 240px; }
+.legend-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+  color: var(--grey-600);
+}
+.legend-row span { display: inline-flex; align-items: center; gap: 8px; }
+.legend-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ====== IMPACT — finding cards ====== */
+.finding-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 16px;
+}
+.finding-card {
+  background: #fff;
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid var(--grey-200);
+  position: relative;
+}
+.finding-card .badge-num {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--blue-bright);
+  background: var(--blue-pale);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+.finding-card h4 {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+.finding-card .stat {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.finding-card p { margin: 0; font-size: 0.92rem; color: var(--grey-600); line-height: 1.5; }
+.finding-card strong { color: var(--ink); font-weight: 700; }
+
+/* ====== DATA TAB ====== */
+.filter-bar {
+  background: #fff;
+  border: 1px solid var(--grey-200);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.filter-group { display: flex; flex-direction: column; gap: 6px; }
+.filter-group label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  color: var(--grey-500);
+  font-weight: 700;
+}
+.filter-group select {
+  padding: 9px 14px;
+  border: 1px solid var(--grey-200);
+  border-radius: 8px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--ink);
+  cursor: pointer;
+  min-width: 150px;
+  font-weight: 500;
+  transition: border-color 0.15s;
+}
+.filter-group select:hover { border-color: var(--grey-400); }
+.filter-group select:focus {
+  outline: none;
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(12,44,92,0.1);
+}
+.reset-btn {
+  padding: 10px 18px;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  height: 39px;
+  letter-spacing: -0.005em;
+  transition: background 0.15s;
+}
+.reset-btn:hover { background: var(--blue); }
+.summary-bar {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 10px;
+  padding: 18px 26px;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 36px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.summary-item {
+  font-size: 0.85rem;
+  color: var(--grey-300);
+  font-weight: 500;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.summary-item strong {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.3rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+.data-table-wrap {
+  background: #fff;
+  border: 1px solid var(--grey-200);
+  border-radius: 12px;
+  overflow: hidden;
+  overflow-x: auto;
+}
+table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.data-table thead {
+  background: var(--grey-100);
+  border-bottom: 1px solid var(--grey-200);
+}
+.data-table th {
+  padding: 14px 14px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--grey-600);
+  white-space: nowrap;
+}
+.data-table td {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--grey-100);
+  vertical-align: top;
+  color: var(--grey-700);
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover { background: var(--grey-100); }
+.data-table td:first-child {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: var(--navy);
+}
+.data-table .score-change {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.data-table .score-change.pos { color: var(--success); }
+.data-table .score-change.neg { color: var(--danger); }
+.data-table .score-change.zero { color: var(--grey-400); }
+.data-table .notes { color: var(--grey-500); font-size: 0.83rem; max-width: 260px; }
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  white-space: nowrap;
+}
+.badge.shifted { background: var(--blue-pale); color: var(--blue); }
+.badge.nuanced { background: #e0e7ff; color: #3730a3; }
+.badge.unchanged { background: var(--grey-100); color: var(--grey-600); }
+
+/* ====== INTERVIEWS — photo grid ====== */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+.photo-tile {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, var(--blue-accent) 100%);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid transparent;
+}
+.photo-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.12), transparent 50%);
+  pointer-events: none;
+}
+.photo-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(12,44,92,0.25);
+}
+.photo-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+.photo-tile img.loaded { background: transparent; }
+.photo-tile .pnum {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.5px;
+  z-index: 3;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.photo-tile .pgroup {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: var(--blue-accent);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  z-index: 3;
+}
+.photo-tile .poverlay {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 14px 12px 10px;
+  background: linear-gradient(to top, rgba(10,31,66,0.9), transparent);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  z-index: 3;
+}
+
+/* ====== MODAL ====== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,10,0.72);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+.modal-overlay.active { display: flex; }
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  max-width: 780px;
+  width: 100%;
+  max-height: 92vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.35);
+  border: 1px solid var(--grey-200);
+}
+.modal-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: var(--grey-100);
+  border: none;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: var(--ink);
+  z-index: 10;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s;
+}
+.modal-close:hover { background: var(--navy); color: #fff; }
+.modal-header {
+  padding: 28px 30px 22px;
+  border-bottom: 1px solid var(--grey-100);
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.modal-photo {
+  width: 140px; height: 140px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--navy), var(--blue-accent));
+}
+.modal-meta h3 {
+  font-size: 1.5rem;
+  margin: 0 0 10px;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.modal-meta .tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  background: var(--grey-100);
+  color: var(--grey-600);
+}
+.tag.leaning-vl { background: #dbeafe; color: #1e3a8a; }
+.tag.leaning-l  { background: #e0e7ff; color: #3730a3; }
+.tag.leaning-m  { background: #f1f5f9; color: #334155; }
+.tag.leaning-c  { background: #fef3c7; color: #78350f; }
+.tag.leaning-vc { background: #fee2e2; color: #7f1d1d; }
+.score-bar {
+  display: flex;
+  gap: 12px;
+  padding-top: 6px;
+}
+.score-item {
+  flex: 1;
+  text-align: left;
+  padding: 10px 14px;
+  background: var(--grey-100);
+  border-radius: 8px;
+}
+.score-item .label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--grey-500);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.score-item .val {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.score-item .val.delta.pos { color: var(--success); }
+.score-item .val.delta.neg { color: var(--danger); }
+.score-item .val.delta.zero { color: var(--grey-400); }
+.modal-body { padding: 24px 30px 28px; }
+.modal-section { margin-bottom: 22px; }
+.modal-section:last-child { margin-bottom: 0; }
+.modal-section h4 {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--blue-bright);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.modal-section p { margin: 0; font-size: 0.95rem; color: var(--ink); line-height: 1.55; }
+
+/* ====== VOICES ====== */
+.video-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+  border-radius: 16px;
+  padding: 36px;
+  margin-bottom: 32px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.video-hero::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(59,130,246,0.18), transparent 65%);
+  pointer-events: none;
+}
+.video-hero > * { position: relative; z-index: 1; }
+.video-tag {
+  display: inline-block;
+  padding: 5px 12px;
+  background: rgba(59,130,246,0.2);
+  color: var(--blue-light);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(147,197,253,0.25);
+}
+.video-hero h3 {
+  color: #fff;
+  margin: 0 0 8px;
+  font-size: 1.55rem;
+  letter-spacing: -0.02em;
+}
+.video-hero .vmeta {
+  color: var(--grey-300);
+  font-size: 0.95rem;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+.video-hero video {
+  width: 100%;
+  max-height: 500px;
+  border-radius: 10px;
+  background: #000;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.video-hero .vscores {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.vscore {
+  background: rgba(255,255,255,0.06);
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.vscore .l {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: var(--grey-400);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.vscore .v {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.015em;
+  font-variant-numeric: tabular-nums;
+}
+.video-hero .quote {
+  margin-top: 22px;
+  font-style: italic;
+  color: var(--grey-200);
+  border-left: 3px solid var(--blue-accent);
+  padding-left: 16px;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+.audio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 18px;
+}
+.audio-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px;
+  border: 1px solid var(--grey-200);
+  position: relative;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.audio-card:hover { border-color: var(--blue-accent); transform: translateY(-2px); }
+.audio-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 24px; bottom: 24px;
+  width: 3px;
+  border-radius: 999px;
+  background: var(--blue-bright);
+}
+.audio-card .interviewer {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: var(--grey-500);
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.audio-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+}
+.audio-card .acmeta { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.audio-card audio { width: 100%; margin: 12px 0 14px; }
+.audio-card .ascores {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 14px;
+  font-size: 0.85rem;
+  color: var(--grey-600);
+  padding: 10px 0;
+  border-top: 1px solid var(--grey-100);
+  border-bottom: 1px solid var(--grey-100);
+}
+.audio-card .ascores strong { color: var(--ink); font-weight: 700; }
+.audio-card .quotes {
+  background: var(--grey-100);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--grey-700);
+  border-left: 3px solid var(--blue-bright);
+  line-height: 1.5;
+}
+.audio-card .quotes p { margin: 0 0 8px; font-size: 0.88rem; color: var(--grey-700); }
+.audio-card .quotes p:last-child { margin: 0; }
+
+/* ====== AWARENESS ====== */
+.aware-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, var(--blue-bright) 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 48px 44px;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.aware-hero::before {
+  content: '';
+  position: absolute;
+  top: -150px; right: -150px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 65%);
+  pointer-events: none;
+}
+.aware-hero > * { position: relative; z-index: 1; }
+.aware-hero .headline-stat {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 0.95;
+  margin-bottom: 12px;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #fff 0%, var(--blue-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.aware-hero .headline-label {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.88);
+  max-width: 520px;
+  line-height: 1.5;
+}
+.aware-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--grey-200);
+  border: 1px solid var(--grey-200);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+.aware-stat { background: #fff; padding: 22px 20px; }
+.aware-stat .n {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  font-variant-numeric: tabular-nums;
+}
+.aware-stat .l {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--grey-500);
+  font-weight: 700;
+}
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.policy-card {
+  background: #fff;
+  padding: 26px;
+  border-radius: 12px;
+  border: 1px solid var(--grey-200);
+}
+.policy-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+}
+.policy-card .pfor, .policy-card .pagainst {
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.policy-card .pfor {
+  background: var(--blue-pale);
+  color: var(--navy-deep);
+  border-left: 3px solid var(--blue-bright);
+}
+.policy-card .pagainst {
+  background: var(--grey-100);
+  color: var(--grey-700);
+  border-left: 3px solid var(--grey-400);
+}
+.policy-card .plabel {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  display: block;
+  margin-bottom: 5px;
+  color: var(--grey-500);
+}
+.policy-card .pfor .plabel { color: var(--blue); }
+.questions-box {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 14px;
+  padding: 32px 36px;
+  margin: 24px 0;
+  position: relative;
+  overflow: hidden;
+}
+.questions-box::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(59,130,246,0.15), transparent 65%);
+  pointer-events: none;
+}
+.questions-box > * { position: relative; z-index: 1; }
+.questions-box h3 { color: #fff; margin: 0 0 16px; font-size: 1.15rem; letter-spacing: -0.015em; }
+.questions-box ol { padding-left: 24px; counter-reset: q; list-style: none; }
+.questions-box li {
+  margin-bottom: 10px;
+  color: var(--grey-200);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  position: relative;
+  padding-left: 12px;
+  counter-increment: q;
+}
+.questions-box li::before {
+  content: counter(q);
+  position: absolute;
+  left: -24px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--blue-accent);
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+.observations {
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px 36px;
+  border: 1px solid var(--grey-200);
+}
+.observations p { font-size: 0.97rem; color: var(--grey-700); line-height: 1.6; }
+
+/* ====== FOOTER ====== */
+footer {
+  background: var(--black);
+  color: var(--grey-400);
+  padding: 56px 0 40px;
+  margin-top: 72px;
+}
+.footer-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--blue-accent);
+  margin-bottom: 20px;
+}
+.footer-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+.researcher { font-size: 0.92rem; }
+.researcher .name { color: #fff; font-weight: 600; margin-bottom: 3px; letter-spacing: -0.01em; }
+.researcher .email {
+  color: var(--grey-500);
+  font-size: 0.82rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+.researcher .email a { color: var(--grey-500); text-decoration: none; transition: color 0.15s; }
+.researcher .email a:hover { color: var(--blue-accent); }
+.footer-bottom {
+  border-top: 1px solid var(--graphite);
+  padding-top: 24px;
+  font-size: 0.82rem;
+  color: var(--grey-600);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 900px) {
+  .stat-row { grid-template-columns: repeat(3, 1fr); }
+  .aware-stats { grid-template-columns: repeat(2, 1fr); }
+  .talking-split, .finding-split { grid-template-columns: 1fr; }
+  .footer-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 1.75rem; }
+  .wrap { padding: 0 20px; }
+  header { padding: 56px 0 48px; }
+  .hero-card, .method-steps, .chart-card, .essay-card { padding: 24px; }
+  .modal-header { grid-template-columns: 1fr; }
+  .modal-photo { width: 100%; height: 240px; }
+  .chart-wrap { height: 420px; }
+  .aware-hero { padding: 32px 24px; }
+  .aware-hero .headline-stat { font-size: 3.5rem; }
+  .stat-row { grid-template-columns: repeat(2, 1fr); }
+  .tab-btn { padding: 16px 14px; font-size: 0.85rem; }
+  .summary-bar { gap: 20px; padding: 14px 20px; }
+  .summary-item strong { font-size: 1.1rem; }
+}
+@media (max-width: 480px) {
+  .stat-row { grid-template-columns: 1fr; }
+  .aware-stats { grid-template-columns: 1fr; }
+  .photo-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+  .audio-grid { grid-template-columns: 1fr; }
+  .data-table { font-size: 0.78rem; }
+  .data-table th, .data-table td { padding: 9px 10px; }
+}
+</style>
+</head>
+<body>
+<!-- ====== HEADER ====== -->
+<header>
+  <div class="wrap header-inner">
+    <span class="eyebrow">Avenues · 11th Grade Research · Spring 2026</span>
+    <h1>Bridging the<br><span class="accent">Mamdani Divide</span></h1>
+    <p class="subtitle">A student research project exploring political polarization around NYC Mayor Zohran Mamdani — and whether a single, well-targeted conversation can move an entrenched view toward the middle.</p>
+    <div class="byline">
+      <strong>Nicolas Gutierrez</strong>
+      <span class="dot">·</span>
+      <strong>Shane Davidoff</strong>
+      <span class="dot">·</span>
+      <strong>Dylan Boester</strong>
+      <span class="dot">·</span>
+      <span>56 interviews</span>
+      <span class="dot">·</span>
+      <span>75 students reached</span>
+      <span class="dot">·</span>
+      <span>131 people total</span>
+    </div>
+  </div>
+</header>
+
+<!-- ====== NAV ====== -->
+<nav class="tabs">
+  <div class="tabs-inner">
+    <button class="tab-btn active" data-tab="mission">Mission</button>
+    <button class="tab-btn" data-tab="impact">Impact</button>
+    <button class="tab-btn" data-tab="data">Data</button>
+    <button class="tab-btn" data-tab="interviews">Interviews</button>
+    <button class="tab-btn" data-tab="voices">Voices</button>
+    <button class="tab-btn" data-tab="awareness">Awareness Day</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ============================================================ -->
+<!-- MISSION TAB                                                  -->
+<!-- ============================================================ -->
+<section class="panel active" id="panel-mission">
+  <div class="section-label">The Mission</div>
+  <h2>Can one conversation make a difference?</h2>
+  <p class="lead">For this project, we set out to test whether a short, structured conversation could move someone's political view even slightly toward the center. We approached New Yorkers across all five boroughs, asked each person to rate Mayor Mamdani on a 1–10 scale, listened to their specific concern, and then shared one fact from the opposing side that addressed that concern directly. Then we asked them to rate him again. Across 56 interviews and a 75-person awareness day, the results were consistent: most people moved — and it didn't take much.</p>
+
+  <div class="hero-card">
+    <h3>What we found on the street</h3>
+    <p>Walking through every borough, it became clear that most people had already made up their minds about Mamdani before a conversation even started. People on opposite ends of the political spectrum were often interpreting the same events in completely opposite ways — not because they lacked information, but because they were rarely exposed to the strongest version of the perspective they disagreed with. We asked each person to rate Mamdani on a 1–10 scale, listened to their one real concern, and then shared one piece of information from the opposing perspective that matched what they said they cared about. Then we asked them to rate him again.</p>
+    <p>The method was intentionally two-sided. Skeptics heard about real accomplishments. Supporters heard about real obstacles. We approached it this way so that each person was engaging with something they hadn't already factored in — not just hearing more of what they already believed. The goal was not to change anyone's mind entirely. It was to create a moment of genuine exposure to the other side.</p>
+  </div>
+
+  <h3>Three research components</h3>
+  <p class="intro-note">Across all three components of this project, we had direct, structured conversations with <strong>131 people</strong> — 56 individual interviews conducted in the field and 75 students and teachers during the awareness day at school.</p>
+
+  <div class="component-grid">
+    <div class="component-card">
+      <div class="count">46</div>
+      <div class="label">Written interviews</div>
+      <p>Field-note format with a selfie taken right after each conversation, conducted across Brooklyn, Queens, Manhattan, The Bronx, and Staten Island. Some interviews included small groups — interviews #30 and #34 each had three respondents, each scored individually.</p>
+    </div>
+    <div class="component-card">
+      <div class="count">9</div>
+      <div class="label">Voice recordings</div>
+      <p>Audio-recorded interviews following the exact same question structure as the written interviews. Later in the project we started recording instead of writing notes — the method, questions, and scoring are identical.</p>
+    </div>
+    <div class="component-card">
+      <div class="count">1</div>
+      <div class="label">Video interview</div>
+      <p>A recorded video interview following the same structure as all other interviews, conducted in Brooklyn with a moderate respondent.</p>
+    </div>
+    <div class="component-card">
+      <div class="count">75</div>
+      <div class="label">Awareness day</div>
+      <p>Three consecutive class periods at Avenues, 25 students and teachers per session, combining historical context, policy deep-dives, facilitated discussion, and a closing vote.</p>
+    </div>
+  </div>
+
+  <h3>How the method worked</h3>
+  <div class="method-steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>Before score (1–10)</h4>
+        <p>"Now that Mamdani has been mayor for about 100 days, how would you rate your overall impression?" The exact number becomes the anchor.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>Listen for the real concern</h4>
+        <p>What's one thing you've liked or disliked? What's your biggest concern? Their answer determined which talking points we used next — we didn't read a script, we tailored to their actual stance.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>Share one opposing perspective</h4>
+        <p>Skeptics (scored 1–4) heard about real accomplishments. Supporters (scored 7–10) heard about real obstacles. Middle scorers (5–6) got whichever matched their specific concern.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h4>After score (1–10)</h4>
+        <p>Same scale. Any movement — up or down — is the measurement. We also asked whether their view was unchanged, slightly more nuanced, or noticeably shifted.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>The two talking-point sets</h3>
+  <div class="talking-split">
+    <div class="talking-card skeptic">
+      <h4>For skeptics (scores 1–4) — real accomplishments</h4>
+      <ul>
+        <li>Partnered with Gov. Hochul to expand free and low-cost childcare for NYC families — one of his first acts in office.</li>
+        <li>"Pothole blitz" — a visible, practical street safety effort that drew support even from people who didn't vote for him.</li>
+        <li>Took landlords to court over rental discrepancies — direct affordability action, not just rhetoric.</li>
+        <li>$108 million sewer investment showing attention to basic city infrastructure.</li>
+      </ul>
+    </div>
+    <div class="talking-card supporter">
+      <h4>For supporters (scores 7–10) — real obstacles</h4>
+      <ul>
+        <li>Tax plan on the wealthy blocked — including by fellow Democrats like Gov. Hochul and City Council Speaker Menin.</li>
+        <li>Own party isn't fully behind him; internal opposition is more organized than expected.</li>
+        <li>Inherited a serious budget shortfall, now in open conflict with the City Council over service cuts.</li>
+        <li>Fare-free buses — his signature campaign promise — still has no confirmed funding path.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h4>Core hypothesis</h4>
+    <p>If polarization is mostly an information problem, then specific facts should move people. If it is mostly tribal identity, nothing will. We found it is somewhere in between — and which one wins depends heavily on <em>how precisely the fact matches the person's stated concern</em>.</p>
+  </div>
+
+  <div class="essay-card">
+    <h3>Why this matters beyond Mamdani</h3>
+    <p>The findings from this project point toward something larger than one mayor or one political moment. If people are willing to reconsider their position after a single, well-targeted conversation, it suggests that political polarization is less about people being fundamentally unwilling to change, and more about the fact that those conversations rarely happen in the right way.</p>
+    <p>Shouting, debating, and arguing tend to make people dig in harder — not because they are stupid or closed-minded, but because confrontation triggers defensiveness. What we found, again and again, is that listening first changes the dynamic entirely. When someone feels genuinely heard, they become far more willing to engage with something they would otherwise dismiss.</p>
+    <p>As Martin Luther King Jr. wrote, <em>"Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that."</em> The same principle applies to political division. Confrontation reinforces it. Genuine dialogue — even brief, even between strangers on a street corner — can quietly loosen it. The conversations in this project lasted five minutes on average. That was enough to move most people at least slightly. That feels like something worth paying attention to.</p>
+  </div>
+</section>
+<!-- ============================================================ -->
+<!-- IMPACT TAB                                                   -->
+<!-- ============================================================ -->
+<section class="panel" id="panel-impact">
+  <div class="section-label">The Impact</div>
+  <h2>Convergence toward the middle</h2>
+  <p class="lead">Across 56 interview sessions, we scored 60 individual respondents — some sessions included two or three people at once, each rated separately. The pattern across all of them is consistent: extreme scores on both ends pulled toward the center. Very few people flipped their position entirely, but a striking number loosened their grip. The chart below shows every respondent as a line from their before score to their after score.</p>
+
+  <div class="stat-row">
+    <div class="stat-cell">
+      <div class="big navy" id="stat-total">60</div>
+      <div class="label">People scored</div>
+    </div>
+    <div class="stat-cell">
+      <div class="big blue" id="stat-shifted">—</div>
+      <div class="label">Noticeably shifted</div>
+    </div>
+    <div class="stat-cell">
+      <div class="big accent" id="stat-nuanced">—</div>
+      <div class="label">Slightly nuanced</div>
+    </div>
+    <div class="stat-cell">
+      <div class="big grey" id="stat-unchanged">—</div>
+      <div class="label">Unchanged</div>
+    </div>
+    <div class="stat-cell">
+      <div class="big navy" id="stat-avg">—</div>
+      <div class="label">Avg. |change|</div>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <h3>Convergence plot</h3>
+    <p class="chart-caption">Each horizontal line is one person. The left dot is their <strong>before</strong> score, the right dot is their <strong>after</strong> score. Blue lines moved toward the center (5.5); amber lines moved away; grey didn't move. Sorted by initial score.</p>
+    <div class="legend-row">
+      <span><span class="legend-dot" style="background:var(--blue-bright);"></span> Moved toward center</span>
+      <span><span class="legend-dot" style="background:#f59e0b;"></span> Moved away from center</span>
+      <span><span class="legend-dot" style="background:var(--grey-400);"></span> Unchanged</span>
+    </div>
+    <div class="chart-wrap"><canvas id="dotPlot"></canvas></div>
+  </div>
+
+  <div class="callout-dark">
+    <div class="label">Methodological note</div>
+    <p>The depolarization effect is most visible in people who started polarized (1–3 or 8–10). People who started at 5–6 couldn't meaningfully "move toward the middle" because <em>they were already there</em> — a floor effect, not a lack of impact. Read the chart as evidence about polarized respondents specifically.</p>
+  </div>
+
+  <div class="callout">
+    <h4>Key finding</h4>
+    <p>The biggest shifts happened when the talking point <em>exactly matched</em> the person's stated concern. A Bronx moderate who mentioned struggling with childcare costs heard that the childcare expansion had actually passed — and moved three points. A skeptic who had seen street repair crews in their neighborhood but didn't know the source heard about the pothole blitz — and gave real credit. Specificity drove change far more than the volume of information shared.</p>
+  </div>
+
+  <h3>The two single facts that moved the most people</h3>
+  <div class="finding-split">
+    <div class="finding-card">
+      <span class="badge-num">FOR SKEPTICS</span>
+      <h4>Childcare expansion + pothole blitz</h4>
+      <div class="stat">11 people</div>
+      <p>Conservatives and moderates who hadn't connected visible street repair work or the childcare expansion to the Mamdani administration gave real credit once they learned it was his initiative. Especially effective in The Bronx, where flooding and road conditions were personal issues. Average shift: <strong>+2.4 points</strong>.</p>
+    </div>
+    <div class="finding-card">
+      <span class="badge-num">FOR SUPPORTERS</span>
+      <h4>Intra-party opposition</h4>
+      <div class="stat">18 people</div>
+      <p>Progressives expected resistance from Republicans or Albany — but not from within their own party. Learning that Governor Hochul and City Council Speaker Menin, both Democrats, were actively blocking the wealth tax, and that the fare-free bus promise still had no confirmed funding path, was the most consistently surprising fact in the entire study. Average shift: <strong>−2.3 points</strong>.</p>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <h3>Average score change by borough</h3>
+    <p class="chart-caption">Absolute average shift per borough — where extremes met their counter-evidence hardest.</p>
+    <div class="chart-wrap mid"><canvas id="boroughChart"></canvas></div>
+  </div>
+
+  <div class="chart-card">
+    <h3>Average score change by age bracket</h3>
+    <p class="chart-caption">Younger respondents showed more movement on average. Those under 30 tended to start with higher initial scores and had stronger reactions when confronted with the intra-party obstacle facts.</p>
+    <div class="chart-wrap mid"><canvas id="ageChart"></canvas></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- DATA TAB                                                     -->
+<!-- ============================================================ -->
+<section class="panel" id="panel-data">
+  <div class="section-label">The Data</div>
+  <h2>Every interview, every score</h2>
+  <p class="lead">Every scorable interview — written, audio, and video — with borough, leaning, before/after scores, and the main factor that drove (or didn't drive) the change. Filter to slice by any dimension.</p>
+
+  <div class="filter-bar">
+    <div class="filter-group">
+      <label for="f-borough">Borough</label>
+      <select id="f-borough">
+        <option value="">All boroughs</option>
+        <option>Brooklyn</option>
+        <option>Queens</option>
+        <option>Manhattan</option>
+        <option>The Bronx</option>
+        <option>Staten Island</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="f-age">Age range</label>
+      <select id="f-age">
+        <option value="">All ages</option>
+        <option>Under 30</option>
+        <option>30–50</option>
+        <option>50+</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="f-leaning">Leaning</label>
+      <select id="f-leaning">
+        <option value="">All leanings</option>
+        <option>Very liberal</option>
+        <option>Liberal</option>
+        <option>Moderate</option>
+        <option>Conservative</option>
+        <option>Very conservative</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="f-outcome">Outcome</label>
+      <select id="f-outcome">
+        <option value="">All outcomes</option>
+        <option>Noticeably shifted</option>
+        <option>Slightly more nuanced</option>
+        <option>Unchanged</option>
+      </select>
+    </div>
+    <button class="reset-btn" id="reset-filters">Reset filters</button>
+  </div>
+
+  <div class="summary-bar">
+    <div class="summary-item"><strong id="sum-count">—</strong> showing</div>
+    <div class="summary-item"><strong id="sum-avg">—</strong> avg. change</div>
+    <div class="summary-item"><strong id="sum-shifted">—</strong> noticeably shifted</div>
+    <div class="summary-item"><strong id="sum-nuanced">—</strong> slightly nuanced</div>
+    <div class="summary-item"><strong id="sum-unchanged">—</strong> unchanged</div>
+  </div>
+
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Age</th>
+          <th>Borough</th>
+          <th>Leaning</th>
+          <th>Before</th>
+          <th>After</th>
+          <th>Δ</th>
+          <th>Outcome</th>
+          <th>Main factor of change</th>
+        </tr>
+      </thead>
+      <tbody id="data-tbody"></tbody>
+    </table>
+  </div>
+</section>
+<!-- ============================================================ -->
+<!-- INTERVIEWS TAB                                               -->
+<!-- ============================================================ -->
+<section class="panel" id="panel-interviews">
+  <div class="section-label">The Interviews</div>
+  <h2>46 interviews, 50 voices</h2>
+  <p class="lead">46 written field interviews, each with a selfie taken right after the conversation. Some interviews were conducted with small groups — interviews #30 and #34 each included three respondents, with each person scored and recorded individually, sharing one photo between them. Click any tile to read the full breakdown — age, borough, leaning, before and after scores, what the person said, what we shared, and what shifted.</p>
+  <div class="photo-grid" id="photo-grid"></div>
+</section>
+
+<!-- ============================================================ -->
+<!-- VOICES TAB                                                   -->
+<!-- ============================================================ -->
+<section class="panel" id="panel-voices">
+  <div class="section-label">Recorded Interviews</div>
+  <h2>Audio and video interviews</h2>
+  <p class="lead">These ten interviews followed the exact same structure and question set as every other interview in this project. The difference is format — later in the process we shifted from writing down responses to recording conversations by audio and video. The method, questions, scoring, and talking points are identical to the written interviews. The recordings simply preserve more of how people actually talk through these topics — the pauses, the moments of reconsideration, and the things people say out loud that don't always make it into written notes.</p>
+
+  <div class="video-hero">
+    <span class="video-tag">Video interview · #47</span>
+    <h3>Brooklyn, Age 35, Moderate</h3>
+    <p class="vmeta">Brooklyn, age 35, moderate. Started at an 8 — optimistic, felt Mamdani was trying to bring the community up — and finished at a 7 after hearing about the intra-party opposition and the stalled budget. Full video below.</p>
+    <video controls preload="metadata" src="video/video_1.mp4"></video>
+    <div class="vscores">
+      <div class="vscore"><div class="l">Before</div><div class="v">8</div></div>
+      <div class="vscore"><div class="l">After</div><div class="v">7</div></div>
+      <div class="vscore"><div class="l">Change</div><div class="v" style="color:#93c5fd;">−1</div></div>
+      <div class="vscore"><div class="l">Outcome</div><div class="v" style="font-size:0.95rem;padding-top:6px;">Slightly nuanced</div></div>
+    </div>
+    <p class="quote">"I feel like he's just entered the game. He's trying and he has a lot to do and a lot of experience to gain."</p>
+  </div>
+
+  <h3>Voice recordings (9)</h3>
+  <div class="audio-grid" id="audio-grid"></div>
+</section>
+
+<!-- ============================================================ -->
+<!-- AWARENESS DAY TAB                                            -->
+<!-- ============================================================ -->
+<section class="panel" id="panel-awareness">
+  <div class="section-label">Awareness Day</div>
+  <h2>Bringing the research home</h2>
+  <p class="lead">After the street interviews, we brought the research into the classroom — three consecutive periods with 25 students and teachers each, debating the four signature policies still in play: fare-free transit, rent freeze/housing, public grocery options, and the wealth tax. These were the future-looking fights — not the completed actions (like the pothole blitz or sewer investment) we'd discussed on the street.</p>
+
+  <div class="aware-hero">
+    <div class="headline-stat">84%</div>
+    <p class="headline-label">of 75 students and teachers said the session changed how they felt about Mamdani — regardless of which direction they started from.</p>
+  </div>
+
+  <div class="aware-stats">
+    <div class="aware-stat"><div class="n">3</div><div class="l">Periods</div></div>
+    <div class="aware-stat"><div class="n">75</div><div class="l">Students</div></div>
+    <div class="aware-stat"><div class="n">25</div><div class="l">Per session</div></div>
+    <div class="aware-stat"><div class="n">4</div><div class="l">Policies debated</div></div>
+  </div>
+
+  <div class="chart-card">
+    <h3>Vote results across all three periods</h3>
+    <p class="chart-caption">At the end of each session, we asked the same question we asked on the street: did any of this shift how you're thinking about Mamdani?</p>
+    <div class="chart-wrap small"><canvas id="awareChart"></canvas></div>
+  </div>
+
+  <h3>The four policies we covered</h3>
+  <div class="policy-grid">
+    <div class="policy-card">
+      <h4>Fare-free transit</h4>
+      <div class="pfor"><span class="plabel">Argument for</span>Would massively increase access for working New Yorkers, especially in outer-borough transit deserts.</div>
+      <div class="pagainst"><span class="plabel">Viability question</span>No confirmed funding source. Promise has stalled through first 100 days.</div>
+    </div>
+    <div class="policy-card">
+      <h4>Rent freeze / housing</h4>
+      <div class="pfor"><span class="plabel">Argument for</span>Direct affordability action; already taking landlords to court for rental discrepancies.</div>
+      <div class="pagainst"><span class="plabel">Viability question</span>Rent stabilization authority is limited; risk of slowing new housing supply.</div>
+    </div>
+    <div class="policy-card">
+      <h4>Public grocery options</h4>
+      <div class="pfor"><span class="plabel">Argument for</span>Addresses food deserts in boroughs where private options have pulled out.</div>
+      <div class="pagainst"><span class="plabel">Viability question</span>City-run retail is operationally unproven at NYC scale; startup cost is real.</div>
+    </div>
+    <div class="policy-card">
+      <h4>Wealth tax</h4>
+      <div class="pfor"><span class="plabel">Argument for</span>Would fund transit, childcare, and housing in one move.</div>
+      <div class="pagainst"><span class="plabel">Viability question</span>Blocked by Gov. Hochul and Speaker Menin — both Democrats. Path unclear.</div>
+    </div>
+  </div>
+
+  <div class="questions-box">
+    <h3>The four discussion questions we used each session</h3>
+    <ol>
+      <li>Where does the funding come from? Fare-free buses, public grocery stores, and rent stabilization all cost the city something — lost fare revenue, operational costs, or forgone rent growth. Which policy's funding path is most realistic, and which feels like wishful thinking?</li>
+      <li>Could any of these backfire on the people they're meant to help? A rent freeze might slow new housing supply. Public groceries could push out private options if they fail. Free buses could cut into MTA service quality. Where's the line between protection and unintended consequence?</li>
+      <li>How much of this actually depends on Albany, the MTA, or the courts? NYC can't act alone on most of these. Which policy can Mamdani execute without outside cooperation — and which is most at the mercy of other institutions?</li>
+      <li>If you had to pick one — free buses, rent freeze, or public grocery options — which does the most for everyday New Yorkers? And which would you drop?</li>
+    </ol>
+  </div>
+
+  <h3>What we observed</h3>
+  <div class="observations">
+    <p>The pattern from the street held up in the classroom. Students who came in most certain — on either side — were the ones who moved the most. Almost no one flipped their position completely, but a striking number of students left saying some version of "I didn't realize his own party was blocking the wealth tax" or "I hadn't considered whether fare-free buses actually has a funding path."</p>
+    <p>The twelve students who reported unchanged views were split roughly evenly between firm supporters who felt the obstacles didn't disqualify the vision, and firm skeptics who felt the policy ideas weren't concrete enough to change their broader concerns. That same pattern appeared in the street data — both poles held when the fact didn't hit their specific concern.</p>
+    <p style="margin:0;">Most important takeaway: the method <em>works</em> when you listen first. Every time a presenter tried to lead with the fact instead of the question, the room got defensive. When they waited for someone to name their concern first, the fact landed.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ====== MODAL ====== -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+    <div class="modal-header">
+      <img class="modal-photo" id="modal-photo" alt="">
+      <div class="modal-meta">
+        <h3 id="modal-title">Interview #</h3>
+        <div class="tags" id="modal-tags"></div>
+        <div class="score-bar">
+          <div class="score-item"><div class="label">Before</div><div class="val" id="modal-before">—</div></div>
+          <div class="score-item"><div class="label">After</div><div class="val" id="modal-after">—</div></div>
+          <div class="score-item"><div class="label">Change</div><div class="val delta" id="modal-delta">—</div></div>
+          <div class="score-item"><div class="label">Outcome</div><div class="val" id="modal-outcome" style="font-size:0.88rem;padding-top:6px;">—</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <h4>Their stance going in</h4>
+        <p id="modal-stance">—</p>
+      </div>
+      <div class="modal-section">
+        <h4>What we shared</h4>
+        <p id="modal-shared">—</p>
+      </div>
+      <div class="modal-section">
+        <h4>What shifted</h4>
+        <p id="modal-shifted">—</p>
+      </div>
+      <div class="modal-section">
+        <h4>Main factor of change</h4>
+        <p id="modal-factor">—</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-label">The Researchers</div>
+    <div class="footer-row">
+      <div class="researcher">
+        <div class="name">Nicolas Gutierrez</div>
+        <div class="email"><a href="mailto:nicolas_gutierrez@avenues-ny.org">nicolas_gutierrez@avenues-ny.org</a></div>
+      </div>
+      <div class="researcher">
+        <div class="name">Shane Davidoff</div>
+        <div class="email"><a href="mailto:shane_davidoff@avenues-ny.org">shane_davidoff@avenues-ny.org</a></div>
+      </div>
+      <div class="researcher">
+        <div class="name">Dylan Boester</div>
+        <div class="email"><a href="mailto:dylan_boester@avenues-ny.org">dylan_boester@avenues-ny.org</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Avenues: The World School · 11th Grade · Spring 2026</span>
+      <span>Bridging the Mamdani Divide — a polarization field study</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ====== INTERVIEW DATA ====== */
+const INTERVIEWS = [
+  {
+    id: "1", num: 1, type: "written", age: 52, ageGroup: "50+",
+    borough: "Brooklyn", leaning: "Conservative",
+    before: 3, after: 5, change: 2, outcome: "Noticeably shifted",
+    mainFactor: "Pothole blitz + sewer investment",
+    stance: "Nervous about tax talk. Didn't like the budget direction — spend and raise taxes doesn't work long-term. Biggest concern: financial sustainability.",
+    shared: "Pothole blitz and $108M sewer investment. Pointed out that the street crews he'd seen on his block were actually Mamdani's operation.",
+    shifted: "Saw the crews on his own block — didn't know that was Mamdani. $108M on sewers registered as real money. Still doesn't love the politics but credited basics being done right. One of the cleaner examples of infrastructure investment landing with a skeptic who had already seen the work firsthand."
+  },
+  {
+    id: "2", num: 2, type: "written", age: 31, ageGroup: "30–50",
+    borough: "Queens", leaning: "Moderate",
+    before: 6, after: 7, change: 1, outcome: "Slightly more nuanced",
+    mainFactor: "Childcare expansion + landlord lawsuits",
+    stance: "Decent impression — housing looked good, landlord conversation caught his eye because people in his building were being overcharged on rent.",
+    shared: "Childcare expansion actually passing, plus landlord lawsuits as concrete enforcement.",
+    shifted: "His sister had been struggling with childcare costs — the fact it actually went through landed immediately. 'Things he can actually feel.' A strong example of childcare hitting personally — his sister's situation made the fact immediately concrete."
+  },
+  {
+    id: "3", num: 3, type: "written", age: 43, ageGroup: "30–50",
+    borough: "The Bronx", leaning: "Liberal",
+    before: 7, after: 5, change: -2, outcome: "Noticeably shifted",
+    mainFactor: "Menin blocking tax plan",
+    stance: "Liked the direction. Supported the wealth tax specifically — 'Bronx needs that money.' Biggest concern was Albany blocking it.",
+    shared: "Tax plan blocked not just by Hochul but by City Council Speaker Menin — a Democrat.",
+    shifted: "'Menin's a Democrat and she's blocking it? That's not Albany — that's right here.' Still supports him but rated him lower because of the obstacle. Notable because the shift came downward — he still supported Mamdani but the Menin detail genuinely rattled him."
+  },
+  {
+    id: "4", num: 4, type: "written", age: 49, ageGroup: "30–50",
+    borough: "Manhattan", leaning: "Conservative",
+    before: 2, after: 2, change: 0, outcome: "Unchanged",
+    mainFactor: "N/A — unmoved",
+    stance: "Called the agenda fiscal recklessness. Worried about financial damage over a full term.",
+    shared: "Childcare, potholes, sewers.",
+    shifted: "Dismissed infrastructure work as 'what any competent administration does.' Not rewarding potholes. One of the few who acknowledged the accomplishments and still held firm — ideology outweighed the facts."
+  },
+  {
+    id: "5", num: 5, type: "written", age: 23, ageGroup: "Under 30",
+    borough: "Brooklyn", leaning: "Very liberal",
+    before: 9, after: 7, change: -2, outcome: "Noticeably shifted",
+    mainFactor: "Buses stalled + Menin blocking",
+    stance: "Incredible so far. 'Feels like our mayor for once.' Loved tax plan, housing, transit.",
+    shared: "Menin blocking the tax; buses with no confirmed funding.",
+    shifted: "'Menin's supposed to be an ally.' Buses stalling hit especially hard — 'were everything.' Still behind him, angry on his behalf. Stayed supportive but anger at Menin was genuine and visible — 'She's supposed to be an ally.'"
+  },
+  {
+    id: "6", num: 6, type: "written", age: 46, ageGroup: "30–50",
+    borough: "Queens", leaning: "Moderate",
+    before: 5, after: 7, change: 2, outcome: "Noticeably shifted",
+    mainFactor: "Sewer investment + childcare",
+    stance: "Wanted results over talk. Not paying super close attention.",
+    shared: "Pothole blitz, $108M sewers, childcare expansion.",
+    shifted: "'When was the last time anyone spent real money on sewers?' Childcare being real, not just promised, was the clincher. Clean match between stated want (tangible results) and what we shared (sewer investment, childcare). Moved two points."
+  },
+  {
+    id: "7", num: 7, type: "written", age: 50, ageGroup: "30–50",
+    borough: "Staten Island", leaning: "Liberal",
+    before: 6, after: 6, change: 0, outcome: "Unchanged",
+    mainFactor: "Concerns already priced in",
+    stance: "Wanted to believe but had reservations. Worried he overpromises and under-delivers.",
+    shared: "Buses no funding; tax blocked by own party.",
+    shifted: "'Not that surprised honestly. Already factored it in.' Obstacles confirmed her priors rather than changing them. Unusual case — the obstacle facts confirmed her existing skepticism rather than surprising her. Priced in."
+  },
+  {
+    id: "8", num: 8, type: "written", age: 42, ageGroup: "30–50",
+    borough: "The Bronx", leaning: "Moderate",
+    before: 5, after: 8, change: 3, outcome: "Noticeably shifted",
+    mainFactor: "Childcare expansion directly relevant",
+    stance: "Didn't know enough, been busy. Had two kids — childcare costs described as 'insane.'",
+    shared: "Childcare expanded, pothole blitz, $108M sewers.",
+    shifted: "Perfect match: stated concern was childcare. Finding out it passed landed hard. 'Real stuff that affects real people.' One of the largest upward shifts in the study. Childcare matched her exact concern about her two kids. Moved three points."
+  },
+  {
+    id: "9", num: 9, type: "written", age: 32, ageGroup: "30–50",
+    borough: "Manhattan", leaning: "Liberal",
+    before: 8, after: 6, change: -2, outcome: "Noticeably shifted",
+    mainFactor: "Menin blocking — deeper than Albany",
+    stance: "Moving fast, right direction. Knew Albany was difficult, expected that.",
+    shared: "Menin blocking, Council conflict, budget shortfall.",
+    shifted: "'Menin too? She's local — that's a whole other level. Didn't know that.' More clear-eyed but still supportive. Moved two points down — the Menin detail was the specific thing that changed the picture for him."
+  },
+  {
+    id: "10", num: 10, type: "written", age: 29, ageGroup: "Under 30",
+    borough: "Brooklyn", leaning: "Very liberal",
+    before: 9, after: 6, change: -3, outcome: "Noticeably shifted",
+    mainFactor: "Menin blocking + buses stalled",
+    stance: "Doing exactly what she hoped. Loved the tax plan and housing.",
+    shared: "Tax blocked by Menin + Hochul; Council conflict; buses no funding path.",
+    shifted: "'Menin is blocking him? Same team. Infuriating.' Big drop but not giving up — just frustrated. Tied for one of the largest downward shifts. Still a supporter, just a significantly more frustrated one."
+  },
+  {
+    id: "11", num: 11, type: "written", age: 34, ageGroup: "30–50",
+    borough: "Queens", leaning: "Moderate",
+    before: 6, after: 7, change: 1, outcome: "Slightly more nuanced",
+    mainFactor: "Pothole blitz — saw it in neighborhood",
+    stance: "Doing ok, no strong feelings. Had noticed more street work than usual.",
+    shared: "Pothole blitz, $108M sewers, childcare.",
+    shifted: "'That street work was him? Had no idea.' Thought it was regular maintenance. Credited him for doing more than he realized. Didn't know the street work was Mamdani's initiative at all — that single piece of information moved him."
+  },
+  {
+    id: "12", num: 12, type: "written", age: 47, ageGroup: "30–50",
+    borough: "The Bronx", leaning: "Conservative",
+    before: 3, after: 6, change: 3, outcome: "Noticeably shifted",
+    mainFactor: "Sewer investment in the Bronx",
+    stance: "Small business owner, didn't trust the agenda. Flooding on his block for two years.",
+    shared: "Pothole blitz, $108M sewers, childcare, landlord lawsuits.",
+    shifted: "Sewer money coming to the Bronx hit his exact frustration. Saw the pothole crews — didn't know that was Mamdani. 'Credit where it's due.' Three-point upward shift driven almost entirely by the sewer investment hitting a very personal concern about flooding on his block."
+  },
+  {
+    id: "13", num: 13, type: "written", age: 33, ageGroup: "30–50",
+    borough: "Manhattan", leaning: "Liberal",
+    before: 7, after: 6, change: -1, outcome: "Slightly more nuanced",
+    mainFactor: "Own party blocking — deeper than expected",
+    stance: "Liked housing work, takes the subway every day — transit mattered.",
+    shared: "Buses no funding; tax blocked by own party.",
+    shifted: "'His own party blocking it? Thought it was just Albany. Menin too — that's a tougher fight.' Still optimistic, less so. Small shift down — the 'own party' framing was the key. Had assumed Albany was the obstacle, not local Democrats."
+  },
+  {
+    id: "14", num: 14, type: "written", age: 31, ageGroup: "30–50",
+    borough: "Brooklyn", leaning: "Moderate",
+    before: 6, after: 8, change: 2, outcome: "Noticeably shifted",
+    mainFactor: "Childcare expansion directly relevant",
+    stance: "Has a toddler. Brooklyn childcare costs described as insane. Already watching the childcare conversation.",
+    shared: "Childcare expanded, $108M sewers, pothole blitz.",
+    shifted: "'Childcare is actually in effect? Not just a proposal?' Perfect match to her concern — changes things for families she knows. Two-point upward shift. The childcare expansion being real — not just proposed — was what moved her."
+  },
+  {
+    id: "15", num: 15, type: "written", age: 22, ageGroup: "Under 30",
+    borough: "Queens", leaning: "Very liberal",
+    before: 9, after: 7, change: -2, outcome: "Noticeably shifted",
+    mainFactor: "Menin blocking — didn't know",
+    stance: "Everything she wanted from a mayor. Wealth tax and free transit — wanted structural change.",
+    shared: "Tax blocked by Menin + Hochul; buses no funding.",
+    shifted: "'City Council Speaker Menin is blocking him? She's a Democrat too.' Genuinely disappointed — didn't know how deep the opposition went. Two-point downward shift. Genuinely didn't know how organized the internal opposition was."
+  },
+  {
+    id: "16", num: 16, type: "written", age: 44, ageGroup: "30–50",
+    borough: "Staten Island", leaning: "Moderate",
+    before: 5, after: 5, change: 0, outcome: "Unchanged",
+    mainFactor: "Not enough new info",
+    stance: "In the middle. Not paying close attention. Vaguely aware of budget drama.",
+    shared: "Childcare, pothole blitz, $108M sewers.",
+    shifted: "Acknowledged the facts were fine but said it wasn't enough to move the needle yet. 'Needs to show a lot more.' One of the few neutral cases — the facts were acknowledged but not enough to shift the number yet."
+  },
+  {
+    id: "17", num: 17, type: "written", age: 59, ageGroup: "50+",
+    borough: "Manhattan", leaning: "Liberal",
+    before: 7, after: 5, change: -2, outcome: "Noticeably shifted",
+    mainFactor: "Pattern of party blocking progressives",
+    stance: "Right ideas, wanted him to succeed. Worried about delivery against enemies.",
+    shared: "Tax blocked by Menin + Hochul; budget shortfall.",
+    shifted: "'Seen this pattern before. Progressives get elected, establishment Democrats shut it down. Demoralizing.' Lowered rating because of the system, not him. Moved not because of Mamdani himself but because of what the blocking pattern said about the Democratic establishment."
+  },
+  {
+    id: "18", num: 18, type: "written", age: 22, ageGroup: "Under 30",
+    borough: "Brooklyn", leaning: "Very liberal",
+    before: 10, after: 6, change: -4, outcome: "Noticeably shifted",
+    mainFactor: "Council opposition + buses no funding",
+    stance: "Canvassed for him. Perfect 10. 'First mayor who feels like he's actually for us.'",
+    shared: "Tax blocked by Menin + Hochul; buses no funding; Council conflict.",
+    shifted: "Largest single drop in the study. 'Knocked on doors for months over those buses. No funding at all — feels outmaneuvered.' Still fighting for what he stands for. The largest single downward shift in the entire study. Canvassed for him, given a perfect 10, dropped to 6."
+  },
+  {
+    id: "19", num: 19, type: "written", age: 34, ageGroup: "30–50",
+    borough: "Queens", leaning: "Liberal",
+    before: 7, after: 7, change: 0, outcome: "Unchanged",
+    mainFactor: "Setbacks already expected",
+    stance: "Following him, thinks he's doing well. Transit vision — free buses would be life-changing for Queens.",
+    shared: "Buses no confirmed funding.",
+    shifted: "Disappointing but not surprising. 'Setbacks are part of it.' Didn't change the number. One of the few unchanged entries where the person had already anticipated the obstacles — setbacks were expected."
+  },
+  {
+    id: "20", num: 20, type: "written", age: 63, ageGroup: "50+",
+    borough: "The Bronx", leaning: "Conservative",
+    before: 3, after: 6, change: 3, outcome: "Noticeably shifted",
+    mainFactor: "Sewer investment + recognized pothole crews",
+    stance: "Too much talking, not enough doing. Bronx has been ignored for decades. Wanted basics: streets, water.",
+    shared: "$108M sewers, pothole blitz, childcare.",
+    shifted: "'Streets flood every time it rains.' Thought the pothole crews were just regular city work. Infrastructure spending in the Bronx got credit. Three-point upward shift. The Bronx sewer investment matched exactly what he'd been asking the city to do for years."
+  },
+  {
+    id: "21", num: 21, type: "written", age: 48, ageGroup: "30–50",
+    borough: "Staten Island", leaning: "Very conservative",
+    before: 1, after: 1, change: 0, outcome: "Unchanged",
+    mainFactor: "N/A — unmoved",
+    stance: "Wants to destroy what makes the city work. Punishing success.",
+    shared: "Childcare, pothole blitz, sewer investment.",
+    shifted: "'That's the job. No special credit for doing what any mayor should do.' Unchanged at 1. Completely unmoved. Acknowledged the accomplishments and said it was simply the job — no special credit."
+  },
+  {
+    id: "22", num: 22, type: "written", age: 54, ageGroup: "50+",
+    borough: "Brooklyn", leaning: "Conservative",
+    before: 2, after: 4, change: 2, outcome: "Noticeably shifted",
+    mainFactor: "Pothole blitz on his block",
+    stance: "Too left, too much government.",
+    shared: "Pothole blitz, $108M sewers.",
+    shifted: "Crews patched six potholes on his block that had been there for years. 'That was Mamdani's initiative?' Credit for the streets, still not for the politics. Two-point upward shift driven by one very specific thing: six potholes on his own block that had been there for years."
+  },
+  {
+    id: "23", num: 23, type: "written", age: 39, ageGroup: "30–50",
+    borough: "Queens", leaning: "Liberal",
+    before: 8, after: 6, change: -2, outcome: "Noticeably shifted",
+    mainFactor: "Menin blocking wealth tax",
+    stance: "Bold. Respected going after the wealth gap.",
+    shared: "Tax blocked by Menin + Hochul; budget shortfall.",
+    shifted: "'Menin's a Democrat blocking the wealth tax. Says something about where her priorities really are.' Still a supporter, just with sharper eyes. Moved two points down. The Menin blocking point was described as revealing where her priorities 'really are.'"
+  },
+  {
+    id: "24", num: 24, type: "written", age: 33, ageGroup: "30–50",
+    borough: "The Bronx", leaning: "Moderate",
+    before: 5, after: 7, change: 2, outcome: "Noticeably shifted",
+    mainFactor: "Childcare expansion — has two kids",
+    stance: "In the middle. Wanted less talk, more action. Childcare is huge for families here.",
+    shared: "Childcare expanded, pothole blitz, $108M sewers.",
+    shifted: "Two kids at home. Higher income threshold matters to people she knows. 'That's not nothing.' Two-point upward shift. Two kids at home — childcare passing was immediately and personally relevant."
+  },
+  {
+    id: "25", num: 25, type: "written", age: 53, ageGroup: "50+",
+    borough: "Staten Island", leaning: "Conservative",
+    before: 2, after: 2, change: 0, outcome: "Unchanged",
+    mainFactor: "N/A — unmoved",
+    stance: "Not his mayor. Felt private sector and job creators were under attack.",
+    shared: "Childcare, pothole blitz, sewer investment.",
+    shifted: "'That's the job. No special credit.' Position unchanged. Completely unmoved. Same framing as #21 — 'that's the job, no special credit.'"
+  },
+  {
+    id: "26", num: 26, type: "written", age: 62, ageGroup: "50+",
+    borough: "Manhattan", leaning: "Liberal",
+    before: 7, after: 5, change: -2, outcome: "Noticeably shifted",
+    mainFactor: "Pattern of establishment blocking progressives",
+    stance: "Heart in the right place. Liked the direction — inequality, housing.",
+    shared: "Tax blocked by Menin + Hochul; budget shortfall.",
+    shifted: "'Same story every time. Someone with real values gets elected, establishment shuts it down. Exhausting.' Shifted because of the system. Moved down because of the systemic pattern, not Mamdani personally. Had seen this before."
+  },
+  {
+    id: "27", num: 27, type: "written", age: 57, ageGroup: "50+",
+    borough: "Brooklyn", leaning: "Moderate",
+    before: 6, after: 7, change: 1, outcome: "Slightly more nuanced",
+    mainFactor: "Pothole blitz on Flatbush + sewer investment",
+    stance: "Cautiously watching. Had noticed more street activity than usual.",
+    shared: "Pothole blitz, $108M sewers, childcare.",
+    shifted: "'Work on Flatbush — that was his operation?' Granddaughter's parents struggled with childcare costs. Doing basics well. One-point upward shift. Street work on Flatbush and childcare for her granddaughter's parents both landed."
+  },
+  {
+    id: "28", num: 28, type: "written", age: 32, ageGroup: "30–50",
+    borough: "Queens", leaning: "Liberal",
+    before: 8, after: 6, change: -2, outcome: "Noticeably shifted",
+    mainFactor: "Menin blocking — wasn't expecting it",
+    stance: "Doing what he said he would. Liked housing push and going after landlords.",
+    shared: "Tax blocked by Menin + Hochul; buses no funding.",
+    shifted: "'Menin's blocking him? Thought she was on his side.' Budget friction was more than expected. Still a supporter. Two-point downward shift. Menin was the surprise — had assumed she was on his side."
+  },
+  {
+    id: "29", num: 29, type: "written", age: 31, ageGroup: "30–50",
+    borough: "The Bronx", leaning: "Very liberal",
+    before: 9, after: 7, change: -2, outcome: "Noticeably shifted",
+    mainFactor: "Menin blocking + internal party organization",
+    stance: "Big fan. First mayor who felt like he cared about Bronx communities.",
+    shared: "Tax blocked by Menin + Hochul; buses no funding.",
+    shifted: "'Thought the fight was with Albany. Internal opposition more organized than she knew.' Sobering, still with him. Two-point downward shift. Thought the opposition was in Albany. Internal organization was more than she knew."
+  },
+  {
+    id: "30a", num: 30, type: "written", age: 60, ageGroup: "50+",
+    borough: "Staten Island", leaning: "Liberal",
+    before: 7, after: 6, change: -1, outcome: "Slightly more nuanced",
+    mainFactor: "Own party blocking — frustrating",
+    stance: "Group interview (R1 of 3). Liked housing and childcare for working families.",
+    shared: "Tax blocked by Hochul; childcare real; $108M sewers.",
+    shifted: "Glad childcare was real. Own party blocking him landed as frustrating. Dropped to 6. One-point downward shift. Own party blocking was what moved her, not the accomplishment facts."
+  },
+  {
+    id: "30b", num: 30, type: "written", age: 60, ageGroup: "50+",
+    borough: "Staten Island", leaning: "Moderate",
+    before: 6, after: 5, change: -1, outcome: "Slightly more nuanced",
+    mainFactor: "Sewer investment noted — budget concern",
+    stance: "Group interview (R2 of 3). Mixed — some proposals sounded too expensive.",
+    shared: "Tax blocked by Hochul; childcare real; $108M sewers.",
+    shifted: "Acknowledged sewer investment as solid and unexpected, but overall confidence slipped on budget worries. One-point downward shift. Noted the sewer investment positively but overall confidence slipped."
+  },
+  {
+    id: "30c", num: 30, type: "written", age: 60, ageGroup: "50+",
+    borough: "Staten Island", leaning: "Conservative",
+    before: 3, after: 3, change: 0, outcome: "Unchanged",
+    mainFactor: "N/A — unmoved",
+    stance: "Group interview (R3 of 3). Too much government, too many promises.",
+    shared: "Tax blocked by Hochul; childcare real; $108M sewers.",
+    shifted: "'He should be doing those things.' Number didn't move. Unchanged. Same pattern as other very conservative respondents — infrastructure acknowledged but not credited."
+  },
+  {
+    id: "31", num: 31, type: "written", age: 33, ageGroup: "30–50",
+    borough: "Manhattan", leaning: "Liberal",
+    before: 7, after: 5, change: -2, outcome: "Noticeably shifted",
+    mainFactor: "Menin as home turf opposition",
+    stance: "Liked approach to inequality — tax plan, housing.",
+    shared: "Tax blocked by Menin + Hochul; budget deficit.",
+    shifted: "'City Council — that's not Albany, that's home turf. Path for anything getting done is really hard.' Internal opposition changed the math. Two-point downward shift. The City Council framing — 'that's home turf, not Albany' — changed the picture."
+  },
+  {
+    id: "32", num: 32, type: "written", age: 52, ageGroup: "50+",
+    borough: "Brooklyn", leaning: "Moderate",
+    before: 5, after: 7, change: 2, outcome: "Noticeably shifted",
+    mainFactor: "Landlord lawsuits — personal relevance",
+    stance: "Hadn't paid close attention. Wanted something real on day-to-day stuff.",
+    shared: "Landlord lawsuits, childcare, $108M sewers, pothole blitz.",
+    shifted: "'Actual lawsuits filed? Her building has been overcharging for years.' Concrete affordability action hit her exact complaint. Two-point upward shift. Landlord lawsuits hit directly — people in her building had been overcharged."
+  },
+  {
+    id: "33", num: 33, type: "written", age: 44, ageGroup: "30–50",
+    borough: "Queens", leaning: "Conservative",
+    before: 3, after: 5, change: 2, outcome: "Noticeably shifted",
+    mainFactor: "Landlord lawsuits + sewer investment",
+    stance: "Small business owner. Braces himself when a progressive is elected.",
+    shared: "Pothole blitz, $108M sewers, landlord lawsuits.",
+    shifted: "Gave credit for going after rent ripoffs and real infrastructure spending. Still skeptical of the overall politics. Two-point upward shift. Gave credit for practical infrastructure and landlord enforcement despite overall skepticism."
+  },
+  {
+    id: "34a", num: 34, type: "written", age: 28, ageGroup: "Under 30",
+    borough: "The Bronx", leaning: "Very liberal",
+    before: 9, after: 7, change: -2, outcome: "Noticeably shifted",
+    mainFactor: "Menin blocking tax — unexpected",
+    stance: "Group interview (R1 of 3). Wealth tax as key Bronx revenue source.",
+    shared: "Tax blocked by Menin + Hochul; buses no funding; childcare real; $108M sewers.",
+    shifted: "'Menin's a Democrat blocking the tax. Messed up. Didn't know that.' Dropped to 7. Two-point downward shift. Menin blocking the wealth tax was specifically called out as 'messed up.'"
+  },
+  {
+    id: "34b", num: 34, type: "written", age: 28, ageGroup: "Under 30",
+    borough: "The Bronx", leaning: "Very liberal",
+    before: 9, after: 6, change: -3, outcome: "Noticeably shifted",
+    mainFactor: "Buses no funding — main disappointment",
+    stance: "Group interview (R2 of 3). Fare-free transit was the big thing for him.",
+    shared: "Tax blocked by Menin + Hochul; buses no funding; childcare real; $108M sewers.",
+    shifted: "'No funding for the buses? That was his whole thing.' Largest drop in the group — frustration centered on the bus promise. Three-point downward shift — the largest in the group. Buses were his whole thing and no funding path was deflating."
+  },
+  {
+    id: "34c", num: 34, type: "written", age: 28, ageGroup: "Under 30",
+    borough: "The Bronx", leaning: "Liberal",
+    before: 8, after: 6, change: -2, outcome: "Noticeably shifted",
+    mainFactor: "Council opposition more than expected",
+    stance: "Group interview (R3 of 3). Cared most about housing and childcare — quality-of-life.",
+    shared: "Tax blocked by Menin + Hochul; buses no funding; childcare real; $108M sewers.",
+    shifted: "Credited childcare and infrastructure as real. Internal opposition was more than expected — recalibrated down to 6. Two-point downward shift. Credited the childcare and infrastructure as real, but internal opposition recalibrated the score."
+  },
+  {
+    id: "35", num: 35, type: "written", age: 41, ageGroup: "30–50",
+    borough: "Manhattan", leaning: "Moderate",
+    before: 6, after: 7, change: 1, outcome: "Slightly more nuanced",
+    mainFactor: "Childcare + potholes — tangible results",
+    stance: "Not wowed. Wanted something tangible she could point to.",
+    shared: "Childcare, pothole blitz, $108M sewers.",
+    shifted: "'Crews near her building — that's him? Childcare went through? That's exactly what she asked for.' One-point upward shift. Had asked for something tangible. The pothole crews near her building and childcare passing were exactly that."
+  },
+  {
+    id: "36", num: 36, type: "written", age: 29, ageGroup: "Under 30",
+    borough: "Brooklyn", leaning: "Liberal",
+    before: 7, after: 6, change: -1, outcome: "Slightly more nuanced",
+    mainFactor: "Own party blocking — didn't know",
+    stance: "Doing well overall. Liked housing push and landlord accountability. Worried about transit.",
+    shared: "Buses no funding; tax blocked by own party.",
+    shifted: "'His own party blocking it — thought it was Albany. Menin too, didn't know that.' Internal opposition was more than realized. One-point downward shift. Own party framing was the key — had thought it was Albany, not local Democrats."
+  },
+  {
+    id: "37", num: 37, type: "written", age: 28, ageGroup: "Under 30",
+    borough: "Queens", leaning: "Very liberal",
+    before: 9, after: 6, change: -3, outcome: "Noticeably shifted",
+    mainFactor: "Menin blocking — genuinely shocking",
+    stance: "Exactly what the city needed. Wealth tax and free transit were game-changers.",
+    shared: "Tax blocked by Menin + Hochul; buses no funding.",
+    shifted: "'Menin's a Democrat and she's blocking him? Genuinely shocking.' Two most-cared-about things stalled — angry but still with him. Three-point downward shift. Described the Menin detail as 'genuinely shocking.' Still with him but deeply frustrated."
+  },
+  {
+    id: "38", num: 38, type: "written", age: 43, ageGroup: "30–50",
+    borough: "The Bronx", leaning: "Moderate",
+    before: 5, after: 8, change: 3, outcome: "Noticeably shifted",
+    mainFactor: "Childcare + Bronx sewer flooding issue",
+    stance: "Neutral. Wanted something for working families — childcare, infrastructure.",
+    shared: "Childcare expanded, $108M sewers, pothole blitz.",
+    shifted: "Streets flood every time it rains hard. Childcare passing and sewer money coming to the Bronx matched her exact asks. 'If it's real, that changes lives here.' Three-point upward shift. Flooding was a real issue on her street. Childcare and sewer investment were her exact asks."
+  },
+  {
+    id: "39", num: 39, type: "written", age: 29, ageGroup: "Under 30",
+    borough: "Staten Island", leaning: "Liberal",
+    before: 7, after: 5, change: -2, outcome: "Noticeably shifted",
+    mainFactor: "Council not behind him either",
+    stance: "Headed in a good direction. The progressive agenda was why he stayed engaged.",
+    shared: "Tax blocked by Menin + Hochul; buses no funding.",
+    shifted: "'If even they aren't behind him, big stuff isn't happening.' Deflating. Two-point downward shift. 'If even they aren't behind him, big stuff isn't happening.' Deflating."
+  },
+  {
+    id: "40", num: 40, type: "written", age: 45, ageGroup: "30–50",
+    borough: "Manhattan", leaning: "Conservative",
+    before: 3, after: 3, change: 0, outcome: "Unchanged",
+    mainFactor: "Infrastructure doesn't offset direction",
+    stance: "No confidence in him. Worried about financial damage — Manhattan supports a huge share of the tax base.",
+    shared: "Childcare, potholes, sewers, landlord lawsuits.",
+    shifted: "'Fine things to do. Infrastructure is the job.' Didn't change the overall view. Unchanged. Acknowledged the infrastructure work was fine but said it didn't change the overall direction."
+  },
+  {
+    id: "41", num: 41, type: "written", age: 42, ageGroup: "30–50",
+    borough: "Brooklyn", leaning: "Moderate",
+    before: 6, after: 7, change: 1, outcome: "Slightly more nuanced",
+    mainFactor: "Landlord lawsuits + sewer investment",
+    stance: "Doing okay. Had seen some news on landlord pushback.",
+    shared: "Landlord lawsuits, $108M sewers, childcare, pothole blitz.",
+    shifted: "'Actual lawsuits, not just talk?' Brooklyn sewer issues on his street for years. More substance than he realized. One-point upward shift. Actual filed lawsuits — not just announcements — was the distinction that mattered."
+  },
+  {
+    id: "42", num: 42, type: "written", age: 40, ageGroup: "30–50",
+    borough: "Queens", leaning: "Liberal",
+    before: 8, after: 6, change: -2, outcome: "Noticeably shifted",
+    mainFactor: "Menin local — narrower path than expected",
+    stance: "Right direction. Housing and transit — either would change Queens significantly.",
+    shared: "Tax blocked by Menin + Hochul; buses no funding; budget deficit.",
+    shifted: "'Knew about Hochul. Menin is different — she's local. Path got a lot narrower than he thought.' Still wants him to succeed. Two-point downward shift. Knew about Hochul — Menin being local made the path feel significantly narrower."
+  },
+  {
+    id: "43", num: 43, type: "written", age: 26, ageGroup: "Under 30",
+    borough: "The Bronx", leaning: "Very liberal",
+    before: 10, after: 6, change: -4, outcome: "Noticeably shifted",
+    mainFactor: "Multiple fronts of internal opposition",
+    stance: "Following him since before he ran. Perfect 10. First mayor who represents people from the Bronx.",
+    shared: "Tax blocked by Menin + Hochul; buses no funding; Council conflict.",
+    shifted: "Tied for largest single drop. 'Multiple fronts of opposition she didn't know about.' Still believes but had to be honest. Tied for the largest downward shift in the study. Ten to six. First mayor she felt represented the Bronx. Had to be honest."
+  },
+  {
+    id: "44", num: 44, type: "written", age: 37, ageGroup: "30–50",
+    borough: "Manhattan", leaning: "Moderate",
+    before: 6, after: 7, change: 1, outcome: "Slightly more nuanced",
+    mainFactor: "Childcare + pothole crews — tangible results",
+    stance: "Housing work interesting. Noticed more street activity than usual.",
+    shared: "Pothole blitz, childcare, $108M sewers.",
+    shifted: "'Crews near his building — that's his operation? Childcare went through too?' More than he knew. Tangible. One-point upward shift. Street crews near his building and childcare passing — both things he hadn't connected to Mamdani."
+  },
+  {
+    id: "45", num: 45, type: "written", age: 29, ageGroup: "Under 30",
+    borough: "Brooklyn", leaning: "Liberal",
+    before: 7, after: 6, change: -1, outcome: "Slightly more nuanced",
+    mainFactor: "Buses no funding — main disappointment",
+    stance: "Doing what he said. Transit push was the most exciting thing for him.",
+    shared: "Buses no confirmed funding; tax blocked by own party.",
+    shifted: "'No funding path? That was the thing he was most excited about.' Had to recalibrate a little. One-point downward shift. Had been most excited about free transit. No funding path was hard to hear."
+  },
+  {
+    id: "46", num: 46, type: "written", age: 27, ageGroup: "Under 30",
+    borough: "Queens", leaning: "Liberal",
+    before: 7, after: 5, change: -2, outcome: "Noticeably shifted",
+    mainFactor: "Both big priorities stalled",
+    stance: "Doing good things. Queens needed housing and transit badly.",
+    shared: "Tax blocked by Menin + Hochul; buses no funding.",
+    shifted: "'Both big things stalled. Changes how much she expects him to actually get done.' Two-point downward shift. Both priorities — housing and transit — stalled. Changed expectations for the term."
+  },
+  /* ====== AUDIO + VIDEO ====== */
+  {
+    id: "47", num: 47, type: "video", age: 35, ageGroup: "30–50",
+    borough: "Brooklyn", leaning: "Moderate",
+    before: 8, after: 7, change: -1, outcome: "Slightly more nuanced",
+    mainFactor: "Party not centered around him — credibility questions",
+    interviewer: "Dylan", mediaFile: "video/video_1.mp4",
+    stance: "'So-so' politically. Felt he's trying to develop and bring the community up.",
+    shared: "Tax plan blocked including by Hochul and Speaker Menin; Council conflict over service cuts; buses no confirmed funding.",
+    shifted: "'I feel like he's just entered the game. He's trying and has a lot of experience to gain.' Acknowledged obstacles but stayed supportive."
+  },
+  {
+    id: "48", num: 48, type: "audio", age: 34, ageGroup: "30–50",
+    borough: "The Bronx", leaning: "Moderate",
+    before: 3, after: 4, change: 1, outcome: "Slightly more nuanced",
+    mainFactor: "Pothole blitz + sewer infrastructure — didn't know",
+    interviewer: "Nico", mediaFile: "audio/audio_1.mp3",
+    stance: "Called himself middle — 'whoever lies less, that's where I go.' Criticized Mamdani for using property tax threats as a bargaining chip with the governor.",
+    shared: "Pothole blitz and sewer infrastructure work.",
+    shifted: "'I didn't know about that. That's good. Let's bump it to four.' Childcare praise was already priced in; the infrastructure news was new."
+  },
+  {
+    id: "49", num: 49, type: "audio", age: 20, ageGroup: "Under 30",
+    borough: "The Bronx", leaning: "Moderate",
+    before: 7, after: 7, change: 0, outcome: "Unchanged",
+    mainFactor: "Skepticism about delivery already baked in",
+    interviewer: "Nico", mediaFile: "audio/audio_2.mp3",
+    stance: "Middle of the road. Noted Mamdani hadn't delivered on the fare-free buses he promised.",
+    shared: "$108M sewer investment; low-cost childcare.",
+    shifted: "Hoped the infrastructure and childcare would be good 'for the city' but kept the rating at 7 — already factoring in incomplete delivery."
+  },
+  {
+    id: "50a", num: 50, type: "audio", age: 18, ageGroup: "Under 30",
+    borough: "The Bronx", leaning: "Moderate",
+    before: 7, after: 7, change: 0, outcome: "Unchanged",
+    mainFactor: "Wanting outcomes before crediting initiatives",
+    interviewer: "Nico", mediaFile: "audio/audio_3.mp3",
+    stance: "Group interview (R1 of 2). Self-identified as 'neither' left nor right. Hadn't heard much from Mamdani personally but acknowledged many initiatives.",
+    shared: "Tax blocked; childcare; pothole blitz; sewer investment.",
+    shifted: "'You'd have to see the actual outcomes first.' Stayed at 7 — credit for initiatives, but reserved judgment on results."
+  },
+  {
+    id: "50b", num: 50, type: "audio", age: 24, ageGroup: "Under 30",
+    borough: "The Bronx", leaning: "Moderate",
+    before: 7, after: 7, change: 0, outcome: "Unchanged",
+    mainFactor: "100 days too early to rate higher",
+    interviewer: "Nico", mediaFile: "audio/audio_3.mp3",
+    stance: "Group interview (R2 of 2). 'Neither' politically. Said 100 days was still too early to judge — gave 7 as fair.",
+    shared: "Tax blocked; childcare; pothole blitz; sewer investment.",
+    shifted: "'Those sound like good things. But it's still a seven — we'll have to wait and see.' Position unchanged."
+  },
+  {
+    id: "51", num: 51, type: "audio", age: null, ageGroup: "50+",
+    borough: "Manhattan", leaning: "Centrist",
+    before: 1, after: 1, change: 0, outcome: "Unchanged",
+    mainFactor: "N/A — unmoved (display floor applied)",
+    interviewer: "Nico", mediaFile: "audio/audio_4.mp3",
+    stance: "Rated Mamdani 0. Primary objection was what they described as the mayor's stance on Israel/antisemitism.",
+    shared: "Landlord pressure on rent; tax plan; pothole work.",
+    shifted: "Rejected the landlord push as 'posture' and felt nothing presented changed the picture. Score displayed as 1 (scale floor)."
+  },
+  {
+    id: "52", num: 52, type: "audio", age: 54, ageGroup: "50+",
+    borough: "Manhattan", leaning: "Centrist",
+    before: 2, after: 2, change: 0, outcome: "Unchanged",
+    mainFactor: "Infrastructure framed as 'minor achievements'",
+    interviewer: "Shane", mediaFile: "audio/audio_5.mp3",
+    stance: "Deep concern about financial damage over a 4-year term. Took specific issue with Gracie Mansion guest list and snowstorm response.",
+    shared: "Childcare expansion with Hochul; pothole blitz; landlord lawsuits.",
+    shifted: "'I don't think any of those things are really big achievements — they're all kind of minor.' Funding unclear in his view. Unchanged."
+  },
+  {
+    id: "53", num: 53, type: "audio", age: 54, ageGroup: "50+",
+    borough: "Staten Island", leaning: "Liberal",
+    before: 3, after: 5, change: 2, outcome: "Slightly more nuanced",
+    mainFactor: "Multiple concrete actions — especially sewer investment",
+    interviewer: "Shane", mediaFile: "audio/audio_6.mp3",
+    stance: "Credited post-snow cleanup but felt big promises were 'not the real world.' Main worry: delivery.",
+    shared: "Childcare expansion; pothole blitz; landlord lawsuits; $108M sewer investment.",
+    shifted: "Answered 4.5 (displayed as 5). 'Slightly more nuanced.' Concrete examples shifted the rating a full two points."
+  },
+  {
+    id: "55", num: 55, type: "audio", age: 19, ageGroup: "Under 30",
+    borough: "Brooklyn", leaning: "Conservative",
+    before: 8, after: 8, change: 0, outcome: "Slightly more nuanced",
+    mainFactor: "Better view of tangible actions",
+    interviewer: "Nico", mediaFile: "audio/audio_8.mp3",
+    stance: "Lean right, 'depends on the situation.' Started at 7.5 — wanted priorities on real needs, cleaner streets.",
+    shared: "Childcare with Hochul; $108M sewer investment; pothole blitz.",
+    shifted: "'Honestly yeah. I had a small idea of some of them but I didn't know how great they were. It's giving me a better view on him.' Rounded to 8/8 — narrative shift without integer change."
+  },
+  {
+    id: "56", num: 56, type: "audio", age: 18, ageGroup: "Under 30",
+    borough: "Manhattan", leaning: "Very conservative",
+    before: 1, after: 2, change: 1, outcome: "Slightly more nuanced",
+    mainFactor: "Concrete wins softened absolute rejection",
+    interviewer: "Nico", mediaFile: "audio/audio_9.mp3",
+    stance: "Rated 0 initially. Strong objections to fare-free buses funding, taxes, and police/public safety stances.",
+    shared: "Childcare expansion; pothole blitz; $108M sewer investment; landlord lawsuits.",
+    shifted: "'I'll give it a two instead of a zero. But I don't think he's doing awesome.' Displayed as 1→2 per scale floor."
+  }
+];
+
+/* ====== INTERVIEW #54 — Brian, no scores ====== */
+const INTERVIEW_54 = {
+  id: "54", num: 54, type: "audio",
+  borough: "Manhattan", leaning: "New to NYC",
+  interviewer: "Shane", mediaFile: "audio/audio_7.mp3",
+  label: "Brian · new to NYC · optimistic",
+  note: "Brian had just moved to NYC and hadn't been following city politics. No before/after score recorded — included for transcript completeness only."
+};
+
+/* ====== KEY QUOTES FOR AUDIO CARDS ====== */
+const AUDIO_QUOTES = {
+  48: [
+    "I was Republican, on their side. But now they're doing stuff that I don't like much. But Democrats still lie so I don't really know where I am.",
+    "I didn't know about that. That's good. Why not, let's bump it to four."
+  ],
+  49: [
+    "He hasn't made that many changes compared to what he promised during the campaign. Like the fare-free buses — he said he was gonna make some buses free.",
+    "I hope it'll be good at least for the city. I still rate him a seven."
+  ],
+  50: [
+    "Well a hundred days is still too early, so I'll go ahead and say seven. I think that's fair.",
+    "Those sound like good things. But it's still a seven — we'll have to wait and see."
+  ],
+  51: [
+    "I haven't liked anything.",
+    "I haven't seen anything that shows he's been doing a good job."
+  ],
+  52: [
+    "The biggest concern is the financial damage that he might do to the city.",
+    "I don't think any of those things are really big achievements — they're all kind of minor."
+  ],
+  53: [
+    "He doesn't know what he doesn't know. All of these big dreams — it's just not the real world.",
+    "Four and a half. Slightly more nuanced."
+  ],
+  54: [
+    "Like I said, I just moved here. I've not been keeping up with New York politics at all.",
+    "It sounds like he's doing good stuff. Hopefully the potholes and the cheap housing — I hope he does a good job. Optimistic."
+  ],
+  55: [
+    "We need to get these streets cleaner — not some other end stuff.",
+    "I had a small idea of some of them but I didn't know how great they were. It's giving me a better view on him."
+  ],
+  56: [
+    "Who on earth is gonna pay for that? Taxes. And now why do we have to make taxes more expensive?",
+    "I'll give it a two instead of a zero. But I don't think he's doing awesome."
+  ]
+};
+</script>
+<script>
+/* ====== HELPERS ====== */
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+const LEAN_CLASS = {
+  "Very liberal": "leaning-vl", "Liberal": "leaning-l",
+  "Moderate": "leaning-m", "Centrist": "leaning-m",
+  "Conservative": "leaning-c", "Very conservative": "leaning-vc",
+  "Neither": "", "New to NYC": ""
+};
+const OUTCOME_CLASS = {
+  "Noticeably shifted": "shifted",
+  "Slightly more nuanced": "nuanced",
+  "Unchanged": "unchanged"
+};
+const COLORS = {
+  navy: "#0c2c5c", navyDeep: "#081f42",
+  blue: "#1e40af", blueBright: "#2563eb", blueAccent: "#3b82f6",
+  blueLight: "#93c5fd", bluePale: "#dbeafe",
+  grey: "#94a3b8", greyLight: "#cbd5e1", greyLighter: "#e2e8f0",
+  ink: "#0f172a", amber: "#f59e0b"
+};
+
+/* ====== TAB SWITCHING ====== */
+$$(".tab-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const tab = btn.dataset.tab;
+    $$(".tab-btn").forEach(b => b.classList.toggle("active", b === btn));
+    $$(".panel").forEach(p => p.classList.toggle("active", p.id === `panel-${tab}`));
+    if (tab === "impact" && !window._impactDrawn) { drawImpactCharts(); window._impactDrawn = true; }
+    if (tab === "awareness" && !window._awareDrawn) { drawAwarenessChart(); window._awareDrawn = true; }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
+/* ====== DATA TABLE + FILTERS ====== */
+const fBorough = $("#f-borough"), fAge = $("#f-age"),
+      fLeaning = $("#f-leaning"), fOutcome = $("#f-outcome");
+[fBorough, fAge, fLeaning, fOutcome].forEach(sel =>
+  sel.addEventListener("change", renderTable));
+$("#reset-filters").addEventListener("click", () => {
+  fBorough.value = fAge.value = fLeaning.value = fOutcome.value = "";
+  renderTable();
+});
+
+function renderTable() {
+  const b = fBorough.value, a = fAge.value, l = fLeaning.value, o = fOutcome.value;
+  const filtered = INTERVIEWS.filter(r => {
+    if (b && r.borough !== b) return false;
+    if (a && r.ageGroup !== a) return false;
+    if (l && r.leaning !== l) return false;
+    if (o && r.outcome !== o) return false;
+    return true;
+  });
+  const tbody = $("#data-tbody");
+  tbody.innerHTML = filtered.map(r => {
+    const cls = OUTCOME_CLASS[r.outcome] || "";
+    const deltaClass = r.change > 0 ? "pos" : r.change < 0 ? "neg" : "zero";
+    const deltaStr = r.change > 0 ? `+${r.change}` : r.change;
+    const ageStr = r.age == null ? "—" : r.age;
+    return `<tr>
+      <td>${r.id}</td>
+      <td>${ageStr}</td>
+      <td>${r.borough}</td>
+      <td>${r.leaning}</td>
+      <td>${r.before}</td>
+      <td>${r.after}</td>
+      <td class="score-change ${deltaClass}">${deltaStr}</td>
+      <td><span class="badge ${cls}">${r.outcome}</span></td>
+      <td class="notes">${r.mainFactor}</td>
+    </tr>`;
+  }).join("");
+  const n = filtered.length;
+  const avg = n ? (filtered.reduce((s, r) => s + Math.abs(r.change), 0) / n).toFixed(2) : "0";
+  const cShift = filtered.filter(r => r.outcome === "Noticeably shifted").length;
+  const cNuance = filtered.filter(r => r.outcome === "Slightly more nuanced").length;
+  const cSame = filtered.filter(r => r.outcome === "Unchanged").length;
+  $("#sum-count").textContent = n;
+  $("#sum-avg").textContent = avg;
+  $("#sum-shifted").textContent = cShift;
+  $("#sum-nuanced").textContent = cNuance;
+  $("#sum-unchanged").textContent = cSame;
+}
+
+/* ====== PHOTO GRID ====== */
+function renderPhotoGrid() {
+  const seen = new Set(), tiles = [];
+  INTERVIEWS.forEach(r => {
+    if (r.type !== "written") return;
+    if (seen.has(r.num)) return;
+    seen.add(r.num);
+    const group = INTERVIEWS.filter(x => x.num === r.num && x.type === "written");
+    tiles.push({
+      num: r.num, firstId: r.id,
+      isGroup: group.length > 1, count: group.length,
+      borough: r.borough
+    });
+  });
+  $("#photo-grid").innerHTML = tiles.map(t => `
+    <div class="photo-tile" data-num="${t.num}">
+      <img src="photos/${t.num}.jpeg" alt="Interview ${t.num}"
+           loading="lazy"
+           onload="this.classList.add('loaded')"
+           onerror="this.style.display='none'">
+      <span class="pnum">#${String(t.num).padStart(2,'0')}</span>
+      ${t.isGroup ? `<span class="pgroup">Group of ${t.count}</span>` : ""}
+      <div class="poverlay">${t.borough}</div>
+    </div>
+  `).join("");
+  $$(".photo-tile").forEach(tile => {
+    tile.addEventListener("click", () => openModalForNum(parseInt(tile.dataset.num)));
+  });
+}
+
+/* ====== MODAL ====== */
+function openModalForNum(num) {
+  const entries = INTERVIEWS.filter(r => r.num === num && r.type === "written");
+  if (!entries.length) return;
+  openModal(entries);
+}
+function openModal(entries) {
+  const m = $("#modal");
+  const first = entries[0];
+  const photoEl = $("#modal-photo");
+  photoEl.src = `photos/${first.num}.jpeg`;
+  photoEl.onerror = function(){ this.style.background = "linear-gradient(135deg, #0c2c5c, #3b82f6)"; this.src = ""; };
+  const isGroup = entries.length > 1;
+  $("#modal-title").textContent = isGroup ? `Interview #${first.num} — Group of ${entries.length}` : `Interview #${first.id}`;
+  const tags = $("#modal-tags");
+  if (!isGroup) {
+    tags.innerHTML = `
+      <span class="tag">Age ${first.age}</span>
+      <span class="tag">${first.borough}</span>
+      <span class="tag ${LEAN_CLASS[first.leaning]||""}">${first.leaning}</span>`;
+  } else {
+    tags.innerHTML = `
+      <span class="tag">~${first.age}</span>
+      <span class="tag">${first.borough}</span>
+      <span class="tag">Group interview</span>`;
+  }
+  if (isGroup) {
+    $("#modal-before").textContent = entries.map(e => e.before).join(" / ");
+    $("#modal-after").textContent = entries.map(e => e.after).join(" / ");
+    $("#modal-delta").textContent = entries.map(e => (e.change>0?`+${e.change}`:e.change)).join(" / ");
+    $("#modal-delta").className = "val delta";
+    $("#modal-outcome").textContent = "See below";
+    $("#modal-stance").innerHTML = entries.map(e =>
+      `<strong>${e.id} (${e.leaning}):</strong> ${e.stance}`).join("<br><br>");
+    $("#modal-shared").textContent = first.shared;
+    $("#modal-shifted").innerHTML = entries.map(e =>
+      `<strong>${e.id}:</strong> ${e.shifted} <em>(${e.outcome})</em>`).join("<br><br>");
+    $("#modal-factor").innerHTML = entries.map(e =>
+      `<strong>${e.id}:</strong> ${e.mainFactor}`).join("<br>");
+  } else {
+    $("#modal-before").textContent = first.before;
+    $("#modal-after").textContent = first.after;
+    const d = first.change;
+    $("#modal-delta").textContent = d > 0 ? `+${d}` : d;
+    $("#modal-delta").className = `val delta ${d>0?"pos":d<0?"neg":"zero"}`;
+    $("#modal-outcome").textContent = first.outcome;
+    $("#modal-stance").textContent = first.stance;
+    $("#modal-shared").textContent = first.shared;
+    $("#modal-shifted").textContent = first.shifted;
+    $("#modal-factor").textContent = first.mainFactor;
+  }
+  m.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+function closeModal() {
+  $("#modal").classList.remove("active");
+  document.body.style.overflow = "";
+}
+$("#modal-close").addEventListener("click", closeModal);
+$("#modal").addEventListener("click", e => { if (e.target.id === "modal") closeModal(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+
+/* ====== AUDIO CARDS ====== */
+function renderAudioCards() {
+  const entries = [];
+  [48, 49, 50, 51, 52, 53, 54, 55, 56].forEach(num => {
+    if (num === 50) {
+      const grp = INTERVIEWS.filter(r => r.num === 50);
+      entries.push({ num, group: grp, combined: true, interviewer: "Nico",
+        borough: "The Bronx", mediaFile: "audio/audio_3.mp3",
+        title: "Ages 18 & 24 — The Bronx — Neither", leaning: "Moderate" });
+    } else if (num === 54) {
+      entries.push({ num, combined: false, interviewer: INTERVIEW_54.interviewer,
+        borough: INTERVIEW_54.borough, mediaFile: INTERVIEW_54.mediaFile,
+        title: "Brian — new to NYC — Manhattan", leaning: INTERVIEW_54.leaning, noScore: true });
+    } else {
+      const r = INTERVIEWS.find(x => x.num === num);
+      if (!r) return;
+      entries.push({ num, entry: r, combined: false,
+        interviewer: r.interviewer, borough: r.borough, mediaFile: r.mediaFile,
+        title: `${r.age ? "Age " + r.age + " — " : ""}${r.borough} — ${r.leaning}`,
+        leaning: r.leaning });
+    }
+  });
+
+  $("#audio-grid").innerHTML = entries.map(a => {
+    const quotesHtml = (AUDIO_QUOTES[a.num] || []).map(q => `<p>"${q}"</p>`).join("");
+    let scoresHtml = "";
+    if (a.combined) {
+      const g = a.group;
+      scoresHtml = `<div class="ascores">
+        <div><strong>Both respondents:</strong> ${g[0].before}/10 → ${g[0].after}/10 (no change)</div>
+      </div>`;
+    } else if (a.noScore) {
+      scoresHtml = `<div class="ascores">
+        <div><em>No before/after score recorded — new to NYC, optimistic.</em></div>
+      </div>`;
+    } else {
+      const e = a.entry, d = e.change, ds = d > 0 ? `+${d}` : d;
+      const color = d > 0 ? "#10b981" : d < 0 ? "#ef4444" : "#94a3b8";
+      scoresHtml = `<div class="ascores">
+        <div><strong>Before:</strong> ${e.before}/10</div>
+        <div><strong>After:</strong> ${e.after}/10</div>
+        <div><strong>Δ:</strong> <span style="color:${color};font-weight:700;">${ds}</span></div>
+        <div><strong>${e.outcome}</strong></div>
+      </div>`;
+    }
+    return `<div class="audio-card">
+      <div class="interviewer">#${a.num}</div>
+      <h4>${a.title}</h4>
+      <div class="acmeta">
+        <span class="tag ${LEAN_CLASS[a.leaning]||""}">${a.leaning}</span>
+        <span class="tag">${a.borough}</span>
+      </div>
+      <audio controls preload="none" src="${a.mediaFile}"></audio>
+      ${scoresHtml}
+      <div class="quotes">${quotesHtml}</div>
+    </div>`;
+  }).join("");
+}
+
+/* ====== IMPACT CHARTS ====== */
+function drawImpactCharts() {
+  const scored = INTERVIEWS.filter(r => typeof r.before === "number");
+  const sorted = [...scored].sort((a, b) => a.before - b.before || a.after - b.after);
+
+  const datasets = sorted.map((r, i) => {
+    const beforeDist = Math.abs(r.before - 5.5);
+    const afterDist = Math.abs(r.after - 5.5);
+    let color = COLORS.grey;
+    if (afterDist < beforeDist) color = COLORS.blueBright;
+    else if (afterDist > beforeDist) color = COLORS.amber;
+    return {
+      label: `#${r.id}`,
+      data: [{x: r.before, y: i+1}, {x: r.after, y: i+1}],
+      borderColor: color,
+      backgroundColor: color,
+      pointRadius: 3.5,
+      pointHoverRadius: 6,
+      borderWidth: 1.5,
+      showLine: true,
+      tension: 0
+    };
+  });
+  new Chart($("#dotPlot"), {
+    type: "scatter",
+    data: { datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      layout: { padding: { left: 8, right: 12, top: 8, bottom: 4 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: COLORS.navy,
+          titleFont: { family: "Inter", weight: "600", size: 12 },
+          bodyFont: { family: "Inter", size: 12 },
+          padding: 10, cornerRadius: 6,
+          callbacks: {
+            label: (ctx) => {
+              const r = sorted[ctx.datasetIndex];
+              const phase = ctx.dataIndex === 0 ? "Before" : "After";
+              return `#${r.id} · ${r.borough} · ${r.leaning} — ${phase}: ${ctx.parsed.x}`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          min: 0.5, max: 10.5,
+          title: { display: true, text: "Score (1–10)", color: COLORS.grey, font: { family: "Inter", size: 11, weight: "600" } },
+          ticks: { stepSize: 1, color: COLORS.grey, font: { family: "Inter", size: 11 } },
+          grid: {
+            color: (c) => c.tick.value === 5.5 ? "rgba(12,44,92,0.2)" : "rgba(226,232,240,0.6)",
+            lineWidth: (c) => c.tick.value === 5.5 ? 2 : 1
+          },
+          border: { display: false }
+        },
+        y: {
+          title: { display: true, text: "Respondent (sorted by initial score)", color: COLORS.grey, font: { family: "Inter", size: 11, weight: "600" } },
+          ticks: { display: false },
+          grid: { display: false },
+          border: { display: false }
+        }
+      }
+    }
+  });
+
+  const total = scored.length;
+  const cShift = scored.filter(r => r.outcome === "Noticeably shifted").length;
+  const cNuance = scored.filter(r => r.outcome === "Slightly more nuanced").length;
+  const cSame = scored.filter(r => r.outcome === "Unchanged").length;
+  const avgAbs = (scored.reduce((s,r)=>s+Math.abs(r.change),0)/total).toFixed(2);
+  $("#stat-total").textContent = total;
+  $("#stat-shifted").textContent = cShift;
+  $("#stat-nuanced").textContent = cNuance;
+  $("#stat-unchanged").textContent = cSame;
+  $("#stat-avg").textContent = avgAbs;
+
+  const boroughs = ["Brooklyn","Queens","Manhattan","The Bronx","Staten Island"];
+  const boroughData = boroughs.map(b => {
+    const g = scored.filter(r => r.borough === b);
+    return { label: b, value: g.length ? +(g.reduce((s,r)=>s+Math.abs(r.change),0)/g.length).toFixed(2) : 0 };
+  }).sort((a,b) => b.value - a.value);
+  const blueRamp = [COLORS.navy, COLORS.blue, COLORS.blueBright, COLORS.blueAccent, COLORS.blueLight];
+  new Chart($("#boroughChart"), {
+    type: "bar",
+    data: {
+      labels: boroughData.map(d => d.label),
+      datasets: [{
+        data: boroughData.map(d => d.value),
+        backgroundColor: blueRamp,
+        borderRadius: 4,
+        barThickness: 22
+      }]
+    },
+    options: {
+      indexAxis: "y",
+      responsive: true, maintainAspectRatio: false,
+      layout: { padding: { right: 16 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: COLORS.navy, padding: 10, cornerRadius: 6,
+          callbacks: { label: (ctx) => `Avg. shift: ${ctx.parsed.x.toFixed(2)} points` }
+        }
+      },
+      scales: {
+        x: {
+          beginAtZero: true,
+          title: { display: true, text: "Avg. absolute change (points)", color: COLORS.grey, font: { family: "Inter", size: 11, weight: "600" } },
+          grid: { color: "rgba(226,232,240,0.5)" },
+          ticks: { color: COLORS.grey, font: { family: "Inter", size: 11 } },
+          border: { display: false }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { color: COLORS.ink, font: { family: "Inter", size: 13, weight: "600" } },
+          border: { display: false }
+        }
+      }
+    }
+  });
+
+  const ageGroups = ["Under 30","30–50","50+"];
+  const ageData = ageGroups.map(a => {
+    const g = scored.filter(r => r.ageGroup === a);
+    return { label: a, value: g.length ? +(g.reduce((s,r)=>s+Math.abs(r.change),0)/g.length).toFixed(2) : 0 };
+  }).sort((a,b) => b.value - a.value);
+  new Chart($("#ageChart"), {
+    type: "bar",
+    data: {
+      labels: ageData.map(d => d.label),
+      datasets: [{
+        data: ageData.map(d => d.value),
+        backgroundColor: [COLORS.navy, COLORS.blueBright, COLORS.blueLight],
+        borderRadius: 4,
+        barThickness: 22
+      }]
+    },
+    options: {
+      indexAxis: "y",
+      responsive: true, maintainAspectRatio: false,
+      layout: { padding: { right: 16 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: COLORS.navy, padding: 10, cornerRadius: 6,
+          callbacks: { label: (ctx) => `Avg. shift: ${ctx.parsed.x.toFixed(2)} points` }
+        }
+      },
+      scales: {
+        x: {
+          beginAtZero: true,
+          title: { display: true, text: "Avg. absolute change (points)", color: COLORS.grey, font: { family: "Inter", size: 11, weight: "600" } },
+          grid: { color: "rgba(226,232,240,0.5)" },
+          ticks: { color: COLORS.grey, font: { family: "Inter", size: 11 } },
+          border: { display: false }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { color: COLORS.ink, font: { family: "Inter", size: 13, weight: "600" } },
+          border: { display: false }
+        }
+      }
+    }
+  });
+}
+
+/* ====== AWARENESS CHART ====== */
+function drawAwarenessChart() {
+  new Chart($("#awareChart"), {
+    type: "bar",
+    data: {
+      labels: ["Noticeably shifted","Slightly more nuanced","Unchanged"],
+      datasets: [{
+        data: [37, 26, 12],
+        backgroundColor: [COLORS.navy, COLORS.blueBright, COLORS.greyLight],
+        borderRadius: 4,
+        barThickness: 26
+      }]
+    },
+    options: {
+      indexAxis: "y",
+      responsive: true, maintainAspectRatio: false,
+      layout: { padding: { right: 28 } },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: COLORS.navy, padding: 10, cornerRadius: 6,
+          callbacks: { label: (ctx) => `${ctx.parsed.x} people (${Math.round(ctx.parsed.x/75*100)}%)` }
+        }
+      },
+      scales: {
+        x: {
+          beginAtZero: true, max: 75,
+          title: { display: true, text: "Participants (of 75)", color: COLORS.grey, font: { family: "Inter", size: 11, weight: "600" } },
+          grid: { color: "rgba(226,232,240,0.5)" },
+          ticks: { color: COLORS.grey, font: { family: "Inter", size: 11 } },
+          border: { display: false }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { color: COLORS.ink, font: { family: "Inter", size: 13, weight: "600" } },
+          border: { display: false }
+        }
+      }
+    }
+  });
+}
+
+/* ====== INIT ====== */
+renderTable();
+renderPhotoGrid();
+renderAudioCards();
+</script>
+</body>
+</html>
